@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>@youcune Portal</title>
+    <%= stylesheet_link_tag 'youcune-bootstrap.min.css', 'portal.css' %>
+    <%= javascript_include_tag 'jquery-2.0.3.min.js', 'portal.js' %>
+  </head>
+  <body>
+    <div id="flicable">
+      <%= yield %>
+    </div>
+  </body>
+</html>
