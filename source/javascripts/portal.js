@@ -11,5 +11,5 @@ function setup(){
     var base = (html - 300) / 2;
     $('#dummy')
         .width(html)
-        .animate({ width: base }, 'normal');
+        .animate({ width: base }, 'slow', 'swing');
 }

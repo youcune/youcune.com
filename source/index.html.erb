@@ -2,7 +2,6 @@
 title: Welcome to Middleman
 layout: portal
 ---
-
 <div id="cards">
   <div class="card" id="dummy"></div>
   <div class="card">
@@ -13,7 +12,7 @@ layout: portal
       <li><a href="http://youcune.com/">http://youcune.com/</a></li>
       <li><a href="mailto:i@youcune.com">i@youcune.com</a></li>
     </ul>
-    <ul class="horizontal" style="margin-top: 12px;">
+    <ul class="list-inline" style="margin-top: 12px;">
       <li><a href="http://twitter.com/youcune"><img src="/images/mini_social_icons/twitter.png" alt="twitter" width="22" height="22"></a></li>
       <li><a href="http://plus.google.com/+YuNakanishi"><img src="/images/mini_social_icons/googleplus.png" alt="Google+" width="22" height="22"></a></li>
       <li><a href="http://facebook.com/youcune"><img src="/images/mini_social_icons/facebook.png" alt="facebook" width="22" height="22"></a></li>
@@ -23,11 +22,11 @@ layout: portal
   </div>
   <div class="card">
     <h1>Blog</h1>
-    <pre><span class="code-keyword">if</span> theme.technical?
-  <span class="code-comment"># 技術ネタはQiitaに書いています</span>
+    <pre><span class="code-keyword">if</span> theme.programming_knowledge?
+  <span class="code-comment"># プログラミング知識はQiitaに</span>
   redirect_to <a href="http://qiita.com/youcune?utm_source=portal&amp;utm_medium=portal&amp;utm_content=card">Qiita</a>
 <span class="code-keyword">else</span>
-  <span class="code-comment"># それ以外のネタはMonologへ</span>
+  <span class="code-comment"># それ以外はMonologに書いています</span>
   redirect_to <a href="http://youcune.com/mono/?utm_source=portal&amp;utm_medium=portal&amp;utm_content=card">Monolog</a>
 <span class="code-keyword">end</span></pre>
   </div>
