@@ -5,11 +5,17 @@
     <meta name="viewport" content="initial-scale=1">
     <title>@youcune Portal</title>
     <%= javascript_include_tag 'jquery-2.0.3.min.js', 'portal.js' %>
-    <%= stylesheet_link_tag 'bootstrap.min.css', 'font-awesome.min.css', 'portal.css' %>
+    <%= stylesheet_link_tag 'bootstrap.min.css', 'portal.css' %>
   </head>
   <body>
-    <div id="flicable">
-      <%= yield %>
+    <div id="wrapper">
+      <div id="flick">
+        <%= yield %>
+      </div>
+      <div id="panel">
+        <button id="btn-prev" class="btn btn-default"><i class="fa fa-arrow-right fa-2x"></i></button>
+        <button id="btn-next" class="btn btn-default"><i class="fa fa-arrow-left fa-2x"></i></button>
+      </div>
     </div>
   </body>
 </html>

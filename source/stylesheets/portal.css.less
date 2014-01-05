@@ -1,0 +1,95 @@
+@card-opacity: 0.9;
+@card-border-color-highlight: #aaaaaa;
+@card-border-color-shadow: darken(@card-border-color-highlight, 25%);
+
+.rounded-corners (@radius: 4px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+body{
+  background: #000000 url(/images/portal/background.jpg) no-repeat center center fixed;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+#wrapper{
+  margin-top: -64px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+
+  #flick{
+    overflow: hidden;
+
+    #cards{
+      width: 4000px;
+
+      .card{
+        .rounded-corners;
+        background-color: #ffffff;
+        border-color: @card-border-color-highlight @card-border-color-shadow @card-border-color-shadow @card-border-color-highlight;
+        border-style: solid;
+        border-width: 1px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        float: left;
+        height: 179px;
+        margin-right: 4px;
+        width: 296px;
+        opacity: @card-opacity;
+        overflow: hidden;
+        padding: 12px;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+
+        h1{
+          font-size: 20px;
+          margin: 0 0 8px;
+        }
+
+        ul{
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        pre{
+          font-size: 12px;
+          line-height: 1.2;
+        }
+      }
+
+      #dummy{
+        background-color: transparent;
+        position: relative;
+        border: 0;
+        margin: 0;
+        padding: 0;
+      }
+
+      #onepad{
+        background: #ffffff url(/images/portal/onepad.png) no-repeat top left scroll;
+        padding-top: 52px;
+      }
+    }
+  }
+
+  #panel{
+    margin-top: 8px;
+    text-align: center;
+
+    button{
+      .rounded-corners;
+      opacity: @card-opacity;
+    }
+  }
+}
