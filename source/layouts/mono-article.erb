@@ -3,12 +3,8 @@
     <header>
       <h2><%= current_page.data.title %></h2>
       <p>
-        <span class="glyphicon glyphicon-time"></span>
-        <%= format_date current_page.data.date %>
-        <span class="glyphicon glyphicon-tag"></span>
-        <% current_page.data.tags.split(/,/).each do |tag| %>
-          <%= link_to tag, tag_path(tag) %>
-        <% end %>
+        <i class="fa fa-clock-o"></i><%= format_date current_page.data.date %>
+        <i class="fa fa-tag"></i><%= blog_tag_links(current_page.data.tags.split(/,/)) %>
       </p>
     </header>
     <%= yield %>

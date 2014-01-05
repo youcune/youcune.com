@@ -78,6 +78,22 @@ helpers do
   def format_date(date)
     date.strftime('%Y.%m.%d')
   end
+
+  def blog_title(title)
+    if title.kind_of?(String) && title.present?
+      "#{title} | Monolog"
+    else
+      'Monolog - @youcuneのブログ'
+    end
+  end
+
+  def blog_tag_links(tags)
+    html = ''
+    tags.each do |tag|
+      html += link_to(tag, tag_path(tag))
+    end
+    html
+  end
 end
 
 set :css_dir, 'stylesheets'

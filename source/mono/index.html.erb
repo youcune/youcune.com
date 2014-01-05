@@ -16,12 +16,8 @@ layout: mono
     <header>
       <h2><%= link_to article.title, article %></h2>
       <p>
-        <span class="glyphicon glyphicon-time"></span>
-        <%= format_date article.date %>
-        <span class="glyphicon glyphicon-tag"></span>
-        <% article.tags.each do |tag| %>
-          <%= link_to tag, tag_path(tag) %>
-        <% end %>
+        <i class="fa fa-clock-o"></i><%= format_date article.date %>
+        <i class="fa fa-tag"></i><%= blog_tag_links(article.tags) %>
       </p>
     </header>
     <%= article.summary(250) %>
