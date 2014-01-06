@@ -5,12 +5,12 @@
   <meta name="viewport" content="initial-scale=1">
   <title><%= blog_title(current_page.data.title) %></title>
   <%= javascript_include_tag 'jquery-2.0.3.min.js' %>
-  <%= stylesheet_link_tag 'bootstrap.min.css', 'font-awesome.min.css', 'mono' %>
+  <%= stylesheet_link_tag 'bootstrap.min.css', 'mono' %>
   <link rel="alternate" type="application/rss+xml" title="RSS" href="http://youcune.com/mono/feed.xml">
 </head>
 <body>
 <header>
-  <h1><img src="http://fakeimg.pl/1024x192/" alt="@youcune Monolog" class="img-responsive"></h1>
+  <h1><a href="/mono/"><img src="/images/mono/mono.jpg" alt="Monolog" id="monologo" class="img-responsive" width="1024" height="256"></a></h1>
 </header>
 <div id="body" class="row">
   <div id="main-column" class="col-xs-12 col-md-8">
