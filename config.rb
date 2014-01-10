@@ -88,11 +88,7 @@ helpers do
   end
 
   def blog_tag_links(tags)
-    html = ''
-    tags.each do |tag|
-      html += link_to(tag, tag_path(tag))
-    end
-    html
+    tags.map { |tag| link_to(tag, tag_path(tag)) }.join(' ')
   end
 end
 

@@ -1,7 +1,7 @@
 ---
 title: ブログをリニューアルしました
 date: 2014-01-01
-tags: info
+tags: Info
 ---
 
 ### Monologオープン
