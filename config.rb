@@ -87,6 +87,14 @@ helpers do
     end
   end
 
+  def blog_meta_description(description)
+    if description.kind_of?(String) && description.present?
+      "<meta name=\"description\" content=\"#{description}\">"
+    else
+      ''
+    end
+  end
+
   def blog_tag_links(tags)
     tags.map { |tag| link_to(tag, tag_path(tag)) }.join(' ')
   end
