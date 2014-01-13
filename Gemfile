@@ -11,7 +11,11 @@ gem 'rdiscount'
 gem 'less'
 gem 'therubyracer'
 
-# For feed.xml.builder
+# For building XML files
 gem 'builder'
 
 gem 'nokogiri'
+
+# For debugging
+gem 'byebug'
+gem 'pry'

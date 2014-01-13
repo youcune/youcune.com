@@ -4,6 +4,8 @@
 
 Time.zone = 'Tokyo'
 
+page '/sitemap.xml', :layout => false
+
 activate :blog do |blog|
   blog.prefix = 'mono'
   blog.permalink = ':category/:slug.html'
@@ -89,6 +91,10 @@ helpers do
 
   def blog_tag_links(tags)
     tags.map { |tag| link_to(tag, tag_path(tag)) }.join(' ')
+  end
+
+  def xml_date(date)
+    date.strftime('%Y-%m-%d')
   end
 end
 
