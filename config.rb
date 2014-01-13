@@ -104,6 +104,15 @@ helpers do
   def xml_date(date)
     date.strftime('%Y-%m-%d')
   end
+
+  # check if source matches target
+  # @param [String] source
+  # @param [String | Regexp] target
+  def match?(source, target)
+    return source == target if target.kind_of?(String)
+    return !(source =~ target).nil? if target.kind_of?(Regexp)
+    return false
+  end
 end
 
 set :css_dir, 'stylesheets'

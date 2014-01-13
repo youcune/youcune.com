@@ -32,17 +32,15 @@ xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
 
       # changefreq
       changefreqs.each do |file, freq|
-        next if file.kind_of?(String) && resource.destination_path != file
-        next if file.kind_of?(Regexp) && resource.destination_path !~ file
-        xml.changefreq freq.to_s
+        next unless match?(resource.destination_path, file)
+        xml.changefreq freq.to_s if freq.present?
         break
       end
 
       # priority
       priorities.each do |file, priority|
-        next if file.kind_of?(String) && resource.destination_path != file
-        next if file.kind_of?(Regexp) && resource.destination_path !~ file
-        xml.priority priority.to_s
+        next unless match?(resource.destination_path, file)
+        xml.priority priority.to_s if priority.present?
         break
       end
     end if resource.destination_path =~ /\.(html)$/
