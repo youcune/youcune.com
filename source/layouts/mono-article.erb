@@ -1,7 +1,7 @@
 <% wrap_layout :mono do %>
   <article>
     <header>
-      <h2><%= current_page.data.title %></h2>
+      <h1><%= current_page.data.title %></h1>
       <p>
         <i class="fa fa-clock-o"></i><%= format_date current_page.data.date %>
         <i class="fa fa-tag"></i><%= blog_tag_links(current_page.data.tags.split(/,/)) %>

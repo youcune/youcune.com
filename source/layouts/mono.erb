@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1">
+  <%= blog_meta_description(current_page.data.description) %>
   <title><%= blog_title(current_page.data.title) %></title>
   <%= javascript_include_tag 'jquery-2.0.3.min.js' %>
   <%= stylesheet_link_tag 'youstrap-m.min.css', 'mono' %>
@@ -11,7 +12,7 @@
 </head>
 <body>
 <header>
-  <h1><a href="/mono/"><img src="/images/mono/mono.jpg" alt="Monolog" id="monologo" class="img-responsive" width="1024" height="256"></a></h1>
+  <div><a href="/mono/"><img src="/images/mono/mono.jpg" alt="Monolog" id="monologo" class="img-responsive" width="1024" height="256"></a></div>
 </header>
 <div id="body" class="row">
   <div id="main-column" class="col-xs-12 col-md-8">
@@ -20,7 +21,7 @@
   <div id="sub-column" class="col-xs-12 col-md-4">
     <aside id="author">
       <h2>Author</h2>
-      <img src="http://www.gravatar.com/avatar/bda36e025600f9e5a400dea0a1f08db1" width="80" height="80" class="pull-right">
+      <img src="http://www.gravatar.com/avatar/bda36e025600f9e5a400dea0a1f08db1" alt="" width="80" height="80" class="pull-right">
       <ul class="vertical">
         <li><i class="fa fa-user"></i>なかにしゆう</li>
         <li><i class="fa fa-suitcase"></i>M3, Inc.</li>
