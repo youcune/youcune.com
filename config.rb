@@ -141,5 +141,5 @@ end
 activate :deploy do |deploy|
   deploy.method = :sftp
   deploy.host   = 'louvre'
-  deploy.path   = '/apps/youcune.com'
+  deploy.path   = '/www/youcune.com'
 end
