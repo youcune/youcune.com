@@ -113,6 +113,18 @@ helpers do
     return !(source =~ target).nil? if target.kind_of?(Regexp)
     return false
   end
+
+  # get Qiita Popular Posts
+  def qiita_posts(post_count = 5)
+    str = ''
+    JSON.parse(Net::HTTP.get(URI.parse('https://qiita.com/api/v1/users/youcune/items')))
+      .sort { |a, b| b['stock_count'] <=> a['stock_count'] }
+      .first(post_count)
+      .each do |a|
+        str += "<li><a href=\"#{a['url']}?utm_source=portal&amp;utm_medium=portal&amp;utm_content=card\">#{a['title']} (#{a['stock_count']})</a></li>"
+      end
+    str.html_safe
+  end
 end
 
 set :css_dir, 'stylesheets'

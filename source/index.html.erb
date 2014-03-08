@@ -20,6 +20,12 @@ layout: portal
     </ul>
   </div>
   <div class="card">
+    <h1>Qiita 人気の投稿</h1>
+    <ul>
+      <%= qiita_posts(3) %>
+    </ul>
+  </div>
+  <div class="card">
     <h1>Blog</h1>
     <pre><span class="code-keyword">if</span> theme.programming_knowledge?
   <span class="code-comment"># プログラミング知識はQiitaに</span>
