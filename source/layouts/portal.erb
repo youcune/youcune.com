@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1">
     <title>@youcune Portal</title>
-    <%= javascript_include_tag 'jquery-2.0.3.min.js', 'portal.js' %>
+    <%= javascript_include_tag 'portal.js' %>
     <%= stylesheet_link_tag 'youstrap-m.min.css', 'portal.css' %>
   </head>
   <body>
     <div id="wrapper">
-      <div id="flick">
+      <div class="viewport">
         <%= yield %>
       </div>
       <div id="panel">

@@ -1,9 +1,9 @@
 ---
 layout: portal
 ---
-<div id="cards">
-  <div class="card" id="dummy"></div>
-  <div class="card">
+<div class="flipsnap">
+  <div class="item" id="dummy"></div>
+  <div class="item">
     <img src="http://www.gravatar.com/avatar/bda36e025600f9e5a400dea0a1f08db1" alt="" width="80" height="80" class="pull-right">
     <h1>Yu Nakanishi</h1>
     <ul class="vertical">
@@ -19,13 +19,13 @@ layout: portal
       </li>
     </ul>
   </div>
-  <div class="card">
+  <div class="item">
     <h1>Qiita 人気の投稿</h1>
     <ul>
       <%= qiita_posts(3) %>
     </ul>
   </div>
-  <div class="card">
+  <div class="item">
     <h1>Blog</h1>
     <pre><span class="code-keyword">if</span> theme.programming_knowledge?
   <span class="code-comment"># プログラミング知識はQiitaに</span>
@@ -35,18 +35,22 @@ layout: portal
   redirect_to <a href="/mono/?utm_source=portal&amp;utm_medium=portal&amp;utm_content=card">Monolog</a>
 <span class="code-keyword">end</span></pre>
   </div>
-  <div class="card" id="onepad">
+  <div class="item">
+    <p class="pull-right"><img src="/images/portal/yasetter.png" alt="" width="128" height="128">
+    <h1>やせったー</h1>
+    <p>は、SNSと連携できる体重・目標管理Webサービスです。</p>
+    <p class="text-center">
+      <a href="http://yasetter.com/?utm_source=portal&amp;utm_medium=portal&amp;utm_content=card" class="btn btn-info"><i class="fa fa-flag-checkered"></i> はじめる</a>
+    </p>
+  </div>
+  <div class="item" id="onepad">
     <h1 class="hide">OnePad<sup>2</sup></h1>
     <p>とは、登録不要でコンピュータ/スマートフォン対応、1ページだけのオンラインメモ帳Webサービスです</p>
     <p class="text-center">
-      <a href="http://onepad.anone.me/?utm_source=portal&amp;utm_medium=portal&amp;utm_content=card" class="btn btn-info"><i class="fa fa-file-o"></i>新規作成</a>
+      <a href="http://onepad.anone.me/?utm_source=portal&amp;utm_medium=portal&amp;utm_content=card" class="btn btn-info"><i class="fa fa-file-o"></i> 新規作成</a>
     </p>
   </div>
-  <div class="card">
-    <h1><a href="http://yasetter.com/"><img src="/images/portal/yasetter.png" alt="yasetter" width="260" height="91"></a></h1>
-    <p>Twitter対応の体重管理サービス。「昨日と比べて-1.2kg」のようにつぶやきます</p>
-  </div>
-  <div class="card">
+  <div class="item">
     <h1>misc</h1>
     <ul class="vertical">
       <li><a href="http://twitter.com/nazeore_bot">なぜ俺bot</a> (<a href="http://anone.me/twitter/nazeore_bot/">紹介記事</a>)</li>

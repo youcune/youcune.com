@@ -1,7 +1,5 @@
-#= require jquery.flicksimple.js
-
-# FlickSimple Object
-fs = null;
+#= require jquery-2.1.0
+#= require flipsnap.js
 
 setup_dummy = ->
   html = $('html').width();
@@ -13,18 +11,18 @@ setup_dummy = ->
 $ ->
   $(window).resize(setup_dummy);
   $('#btn-prev').click ->
-    if fs.flickSimple('page') <= 1
-      $('#dummy')
-        .animate({ width: "+=16px" }, 'fast', 'linear')
-        .animate({ width: "-=16px" }, 'fast', 'linear');
+    if fs.hasPrev()
+      fs.toPrev();
     else
-      fs.flickSimple().prevPage(1);
+      $('#dummy')
+        .animate({ width: "+=16px" }, 125, 'linear')
+        .animate({ width: "-=16px" }, 125, 'linear');
   $('#btn-next').click ->
-    if fs.flickSimple('page') >= 5
-      $('#dummy')
-        .animate({ width: "-=16px" }, 'fast', 'linear')
-        .animate({ width: "+=16px" }, 'fast', 'linear');
+    if fs.hasNext()
+      fs.toNext();
     else
-      fs.flickSimple().nextPage(1);
+      $('#dummy')
+        .animate({ width: "-=16px" }, 125, 'linear')
+        .animate({ width: "+=16px" }, 125, 'linear');
   setup_dummy();
-  fs = $('#flick').flickSimple({ snap: 300 });
+  fs = Flipsnap('.flipsnap', { distance: 300 });
