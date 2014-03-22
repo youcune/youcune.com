@@ -14,7 +14,7 @@ layout: mono
 <% page_articles.each_with_index do |article, i| %>
   <article>
     <header>
-      <h1><%= link_to article.title, article %></h1>
+      <h2><%= link_to article.title, article %></h2>
       <p>
         <i class="fa fa-clock-o"></i><%= format_date article.date %>
         <i class="fa fa-tag"></i><%= blog_tag_links(article.tags) %>

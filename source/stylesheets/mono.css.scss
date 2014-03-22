@@ -23,8 +23,14 @@ body{
         }
       }
       article{
-        p img{
-          max-width: 100%;
+        p{
+          img{
+            max-width: 100%;
+          }
+        }
+        p.ad-right{
+          float: right;
+          margin-left: 16px;
         }
       }
     }
