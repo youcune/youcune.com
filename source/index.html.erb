@@ -20,12 +20,6 @@ layout: portal
     </ul>
   </div>
   <div class="item">
-    <h1>Qiita 人気の投稿</h1>
-    <ul>
-      <%= qiita_posts(3) %>
-    </ul>
-  </div>
-  <div class="item">
     <h1>Blog</h1>
     <pre><span class="code-keyword">if</span> theme.programming_knowledge?
   <span class="code-comment"># プログラミング知識はQiitaに</span>
@@ -34,6 +28,12 @@ layout: portal
   <span class="code-comment"># それ以外はMonologに書いています</span>
   redirect_to <a href="/mono/?utm_source=portal&amp;utm_medium=portal&amp;utm_content=card">Monolog</a>
 <span class="code-keyword">end</span></pre>
+  </div>
+  <div class="item">
+    <h1>Qiita 人気の投稿</h1>
+    <ul>
+      <%= qiita_posts(3) %>
+    </ul>
   </div>
   <div class="item">
     <p class="pull-right"><img src="/images/portal/yasetter.png" alt="" width="128" height="128">
@@ -53,7 +53,8 @@ layout: portal
   <div class="item">
     <h1>misc</h1>
     <ul class="vertical">
-      <li><a href="http://twitter.com/nazeore_bot">なぜ俺bot</a> (<a href="http://anone.me/twitter/nazeore_bot/">紹介記事</a>)</li>
+      <li><a href="http://xpath-tester.herokuapp.com/">XPath Tester</a></li>
+      <li><a href="http://twitter.com/nazeore_bot">なぜ俺bot</a></li>
       <li><a href="http://twitter.com/ILC_bot">ILC bot</a></li>
     </ul>
   </div>
