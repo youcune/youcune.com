@@ -117,7 +117,7 @@ helpers do
   # get Qiita Popular Posts
   def qiita_posts(post_count = 5)
     str = ''
-    JSON.parse(Net::HTTP.get(URI.parse('https://qiita.com/api/v1/users/youcune/items')))
+    JSON.parse(Net::HTTP.get(URI.parse('https://qiita.com/api/v1/users/youcune/items?per_page=100')))
       .sort { |a, b| b['stock_count'] <=> a['stock_count'] }
       .first(post_count)
       .each do |a|
