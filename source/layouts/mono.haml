@@ -5,7 +5,7 @@
     %meta{name: 'viewport', content: 'initial-scale=1,user-scalable=no'}
     = blog_meta_description(current_page.data.description)
     %title= blog_title(current_page.data.title)
-    = javascript_include_tag 'jquery-2.1.0.js'
+    = javascript_include_tag 'jquery-2.1.0.js', '//platform.twitter.com/widgets.js'
     = stylesheet_link_tag 'youstrap-m.min.css', 'mono'
     %link{rel: 'alternate', type: 'application/rss+xml', title: 'RSS', href: 'http://youcune.com/mono/feed.xml'}
     %link{rel: 'author', href: 'http://google.me/+YuNakanishi'}
