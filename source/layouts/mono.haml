@@ -1,0 +1,43 @@
+!!! 5
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{name: 'viewport', content: 'initial-scale=1,user-scalable=no'}
+    = blog_meta_description(current_page.data.description)
+    %title= blog_title(current_page.data.title)
+    = javascript_include_tag 'jquery-2.1.0.js'
+    = stylesheet_link_tag 'youstrap-m.min.css', 'mono'
+    %link{rel: 'alternate', type: 'application/rss+xml', title: 'RSS', href: 'http://youcune.com/mono/feed.xml'}
+    %link{rel: 'author', href: 'http://google.me/+YuNakanishi'}
+    %link{rel: 'icon', type: 'image/png', href: '/images/favicon.png'}
+    %link{rel: 'apple-touch-icon', type: 'image/png', href: '/images/apple-touch-icon.png'}
+  %body
+    %header
+      %div= link_to(image_tag('/images/mono/mono.jpg', alt: '', id: 'monologo', class: 'img-responsive', width: 1024, height: 256), '/mono/')
+    #body.row
+      #main-column.col-xs-12.col-md-8
+        = yield
+      #sub-column.col-xs-12.col-md-4
+        %aside#author
+          %h2 Author
+          = image_tag '//www.gravatar.com/avatar/bda36e025600f9e5a400dea0a1f08db1', alt: '', width: 80, height: 80, class: 'pull-right'
+          = partial 'partials/profile'
+        %aside.latest-posts
+          %h2 Latest Posts
+          %ul
+            - blog.articles[0...10].each do |article|
+              %li
+                = link_to article.title, article
+                %span= format_date article.date
+        %aside.tag-cloud
+          %h2 Tags
+          %ul
+            - max_count = (blog.tags.values.map(&:size) << 2).max
+            - blog.tags.each do |tag, articles|
+              %li= link_to tag, tag_path(tag), nil, style: 'font-size: ' + (Rational(articles.size, max_count) * 200).to_i.to_s + '%;'
+    %footer
+      %p.pull-left
+        = link_to(icon('home', 'Portal'), '/?utm_source=mono&utm_medium=footer', class: 'btn btn-default')
+      %p.pull-right
+        = link_to(icon('rss', 'RSS'), '/mono/feed.xml', class: 'btn btn-warning')
+      %p.text-center &copy; youcune<br>営利目的の転載はお断りします

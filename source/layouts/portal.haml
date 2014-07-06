@@ -1,0 +1,24 @@
+!!! 5
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{name: 'viewport', content: 'initial-scale=1,user-scalable=no'}
+    %meta{property: 'og:title', content: 'youcune.com'}
+    %meta{property: 'og:type', content: 'website'}
+    %meta{property: 'og:url', content: 'http://youcune.com/'}
+    %meta{property: 'og:locale', content: 'ja_JP'}
+    %meta{property: 'og:image', content: 'http://youcune.com/images/icon.png'}
+    %meta{property: 'og:description', content: '@youcune のオフィシャルサイトです'}
+    %title youcune.com | @youcune Portal
+    = javascript_include_tag 'portal.js'
+    = stylesheet_link_tag 'youstrap-m.min.css', 'portal.css'
+    %link{rel: 'author', href: 'http://google.me/+YuNakanishi'}
+    %link{rel: 'icon', type: 'image/png', href: '/images/favicon.png'}
+    %link{rel: 'apple-touch-icon', type: 'image/png', href: '/images/apple-touch-icon.png'}
+  %body
+    #wrapper
+      .viewport
+        = yield
+      #panel
+        %button#btn-prev.btn.btn-default= icon('arrow-right', '', class: 'fa-2x')
+        %button#btn-next.btn.btn-default= icon('arrow-left', '', class: 'fa-2x')

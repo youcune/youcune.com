@@ -1,0 +1,43 @@
+---
+layout: portal
+---
+.flipsnap
+  #dummy.item
+  .item
+    = image_tag 'http://www.gravatar.com/avatar/6a90bd29df59782ff4ba039aa7cc3f8a', alt: '', width: 80, height: 80, class: 'pull-right'
+    %h1 Yu Nakanishi
+    = partial 'partials/profile'
+  .item
+    %h1 Blog
+    %pre
+      :preserve
+        <span class="code-keyword">if</span> theme.programming_knowledge?
+          <span class="code-comment"># プログラミング知識はQiitaに</span>
+          redirect_to <a href="http://qiita.com/youcune?utm_source=portal&amp;utm_medium=portal&amp;utm_content=card">Qiita</a>
+        <span class="code-keyword">else</span>
+          <span class="code-comment"># それ以外はMonologに書いています</span>
+          redirect_to <a href="/mono/?utm_source=portal&amp;utm_medium=portal&amp;utm_content=card">Monolog</a>
+        <span class="code-keyword">end</span>
+  .item
+    %p.pull-right= image_tag '/images/portal/yasetter.png', alt: '', width: 128, height: 128
+    %h1 やせったー
+    %p は、 SNS と連携できる体重・目標管理 Web サービスです。
+    %p.text-center= link_to(icon('flag-checkered', 'はじめる'), 'http://yasetter.com/?utm_source=portal&utm_medium=portal&utm_content=card', class: 'btn btn-primary')
+  .item
+    %h1= image_tag '/images/portal/friends-pop.png', alt: 'Friends-Pop', width: 215, height: 37
+    %p は、 Facebook の友人の友人を検索して紹介を依頼できる Web サービスです。
+    %p.text-center= link_to(icon('flag-checkered', 'はじめる'), 'http://friends-pop.kumonos.jp/', class: 'btn btn-primary')
+  .item#onepad
+    %h1.hide OnePad<sup>2</sup>
+    %p は、登録不要でコンピュータ/スマートフォン対応、1ページだけのオンラインメモ帳 Web サービスです。
+    %p.text-center= link_to(icon('flag-checkered', 'はじめる'), 'http://onepad.anone.me/?utm_source=portal&utm_medium=portal&utm_content=card', class: 'btn btn-primary')
+  .item
+    %h1 misc
+    %ul.vertical
+      %li
+        = link_to 'XPath Tester', 'http://xpath-tester.herokuapp.com/'
+        %span.label.label-default 開発者向け
+      %li= link_to 'なぜ俺bot', 'http://twitter.com/nazeore_bot'
+      %li
+        = link_to 'ILC bot', 'http://twitter.com/ILC_bot'
+        %span.label.label-default IBM社員向け
