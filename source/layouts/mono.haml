@@ -5,8 +5,8 @@
     %meta{name: 'viewport', content: 'initial-scale=1,user-scalable=no'}
     = blog_meta_description(current_page.data.description)
     %title= blog_title(current_page.data.title)
-    = javascript_include_tag 'jquery-2.1.0.js', '//platform.twitter.com/widgets.js'
-    = stylesheet_link_tag 'youstrap-m.min.css', 'mono'
+    = javascript_include_tag 'mono', '//platform.twitter.com/widgets.js'
+    = stylesheet_link_tag 'mono'
     %link{rel: 'alternate', type: 'application/rss+xml', title: 'RSS', href: 'http://youcune.com/mono/feed.xml'}
     %link{rel: 'author', href: 'http://google.me/+YuNakanishi'}
     %link{rel: 'icon', type: 'image/png', href: '/images/favicon.png'}
@@ -22,14 +22,14 @@
           %h2 Author
           = image_tag '//www.gravatar.com/avatar/bda36e025600f9e5a400dea0a1f08db1', alt: '', width: 80, height: 80, class: 'pull-right'
           = partial 'partials/profile'
-        %aside.latest-posts
+        %aside#latest-posts
           %h2 Latest Posts
           %ul
             - blog.articles[0...10].each do |article|
               %li
                 = link_to article.title, article
                 %span= format_date article.date
-        %aside.tag-cloud
+        %aside#tag-cloud
           %h2 Tags
           %ul
             - max_count = (blog.tags.values.map(&:size) << 2).max

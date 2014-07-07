@@ -7,8 +7,11 @@ gem 'middleman-deploy'
 # Markdown Parser
 gem 'rdiscount'
 
-# Less Compiler
-gem 'less'
+# CSS Frameworks
+gem 'bootstrap-sass', require: false
+gem 'font-awesome-middleman', require: false
+
+# Javascript Runtime
 gem 'therubyracer'
 
 # For building XML files
