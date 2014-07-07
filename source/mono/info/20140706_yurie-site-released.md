@@ -1,14 +1,14 @@
 ---
-title: yurie.sexy のサイトを公開しました！
+title: ゆりえ Days のサイトを公開しました！
 date: 2014-07-06
 tags: Info
 ---
 
-### yurie.sexy オープン
+### ゆりえ Days オープン
 
-本日、 [yurie.sexy](http://yurie.sexy/) という新サイトをオープンしました。
+本日、 [ゆりえ Days](http://yurie.sexy/) という新サイトをオープンしました。
 
-![yurie.sexy](/mono/info/20140706_yurie-site-released.png)
+![ゆりえ Days](/mono/info/20140706_yurie-site-released.png)
 
 中身は鋭意制作中です。
 
@@ -29,3 +29,7 @@ tags: Info
 「これまでにない（※ @youcune 調べ）新感覚コミュニケーションサービス」です。
 
 あとは開発ですね！
+
+### 07/07 追記
+
+「サービス名がちょっと……」とご意見いただいたので、「yurie.sexy」から「ゆりえ Days」に改名いたしました。
