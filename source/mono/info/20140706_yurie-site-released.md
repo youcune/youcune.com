@@ -6,7 +6,7 @@ tags: Info
 
 ### ゆりえ Days オープン
 
-本日、 [ゆりえ Days](http://yurie.sexy/) という新サイトをオープンしました。
+本日、 [ゆりえ Days](http://yurie.sexy/?utm_source=mono&utm_medium=article&utm_content=20140706_yurie-site-released) という新サイトをオープンしました。
 
 ![ゆりえ Days](/mono/info/20140706_yurie-site-released.png)
 
