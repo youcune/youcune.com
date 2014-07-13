@@ -35,6 +35,12 @@ body{
           float: right;
           margin-left: 16px;
         }
+        p.dialog-a {
+          color: darken($brand-success, 30%);
+        }
+        p.dialog-b {
+          color: darken($brand-danger, 30%);
+        }
       }
     }
 
