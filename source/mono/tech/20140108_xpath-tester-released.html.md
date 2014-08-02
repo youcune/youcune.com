@@ -7,11 +7,11 @@ description: XPathのテストツールをGithubに公開したので紹介し�
 
 ### XPathをどうテストするか
 
-XPathってちょっとむつかしくないですか？　あれこの書き方で要素取れるのかなとか知りたくなったりしませんか？　みんなこういうときってどうやってテストしてるのでしょうか。。テストのしかたがよく分からなかったのでテストツール[XPath Tester](https://github.com/youcune/xpath-tester/)を作ってみました。
+XPathってちょっとむつかしくないですか？　あれこの書き方で要素取れるのかなとか知りたくなったりしませんか？　みんなこういうときってどうやってテストしてるのでしょうか。。テストのしかたがよく分からなかったのでテストツール [XPath Tester](http://xpath-tester.herokuapp.com/) を作ってみました。
 
-いちおう動くレベルです。必要ないかもしれへんけどテストコードとエラーハンドリングとかの部分をいまつくっているのでまたそのうちPushします。
+### ソースコード
 
-### 使い方
+[GitHub](https://github.com/youcune/xpath-tester/) にあります。自分で動かすには下記のようにします。
 
 * Ruby 2.x がインストールされていること
 * bundler がインストールされていること
@@ -21,8 +21,8 @@ XPathってちょっとむつかしくないですか？　あれこの書き方
 ```bash
 $ git clone https://github.com/youcune/xpath-tester.git
 $ cd xpath-tester
-$ bundle install --path vendor/bundle --without development test
-$ bundle exec rails server -e production
+$ bundle install --path vendor/bundle
+$ bundle exec rails server
 ```
 
-として、 [http://localhost:3000/](http://localhost:3000/) にアクセスすれば試せると思います。コードはREXMLを呼び出しているだけなので実質1行ですｗ
+として、 [http://localhost:3000/](http://localhost:3000/) にアクセスすれば試せると思います。コードは REXML を呼び出しているだけなのでほとんど中身ないですｗ
