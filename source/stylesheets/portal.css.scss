@@ -28,7 +28,7 @@ $card-border-color-shadow: darken($card-border-color-highlight, 25%);
 // Custom Styles
 // -------------------------------------------------------------------
 body{
-  background: #000000 image-url('portal/background.jpg') no-repeat center center fixed;
+  background: #000000 url(/images/portal/background.jpg) no-repeat center center fixed;
   color: #333333;
   margin: 0;
   padding: 0;
@@ -94,13 +94,13 @@ body{
       }
 
       #yurie{
-        background: #ffffff image-url('portal/yurie.jpg') no-repeat right 4px scroll;
+        background: #ffffff url(/images/portal/yurie.jpg) no-repeat right 4px scroll;
         background-size: 128px 177px;
         padding-right: 128px;
       }
 
       #onepad{
-        background: #ffffff image-url('portal/onepad.png') no-repeat top left scroll;
+        background: #ffffff url(/images/portal/onepad.png) no-repeat top left scroll;
         background-size: 293px 176px;
         padding: 52px 0 0 16px;
       }
