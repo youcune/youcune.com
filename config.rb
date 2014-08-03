@@ -135,6 +135,11 @@ helpers do
       end
     str.html_safe
   end
+
+  # returns image url
+  def image_url(source)
+    "http://youcune.com#{image_path(source)}"
+  end
 end
 
 set :css_dir, 'stylesheets'
@@ -149,7 +154,7 @@ configure :build do
   activate :minify_javascript
   
   # Enable cache buster
-  # activate :cache_buster
+  activate :asset_hash
   
   # Use relative URLs
   # activate :relative_assets

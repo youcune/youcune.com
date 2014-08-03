@@ -9,11 +9,11 @@
     = stylesheet_link_tag 'mono'
     %link{rel: 'alternate', type: 'application/rss+xml', title: 'RSS', href: 'http://youcune.com/mono/feed.xml'}
     %link{rel: 'author', href: 'http://google.me/+YuNakanishi'}
-    %link{rel: 'icon', type: 'image/png', href: '/images/favicon.png'}
-    %link{rel: 'apple-touch-icon', type: 'image/png', href: '/images/apple-touch-icon.png'}
+    %link{rel: 'icon', type: 'image/png', href: image_path('favicon.png')}
+    %link{rel: 'apple-touch-icon', type: 'image/png', href: image_path('apple-touch-icon.png')}
   %body
     %header
-      %div= link_to(image_tag('/images/mono/mono.jpg', alt: '', id: 'monologo', class: 'img-responsive', width: 1024, height: 256), '/mono/')
+      %div= link_to(image_tag('mono/mono.jpg', alt: '', id: 'monologo', class: 'img-responsive', width: 1024, height: 256), '/mono/')
     #body.row
       #main-column.col-xs-12.col-md-8
         = yield
