@@ -12,6 +12,4 @@ tags: Photo
   %li 望遠で撮る
 %h3 こんな写真が撮れます
 - (1..7).each do |i|
-  %p<
-    %a{ href: "/mono/photo/20140208_#{i}.jpg" }<
-      %img{ src: "/mono/photo/20140208_#{i}s.jpg", alt: i }
+  %p= link_to(image_tag("mono/photo/20140208_#{i}s.jpg", alt: i), image_path("mono/photo/20140208_#{i}.jpg"))

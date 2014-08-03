@@ -7,14 +7,14 @@
     %meta{property: 'og:type', content: 'website'}
     %meta{property: 'og:url', content: 'http://youcune.com/'}
     %meta{property: 'og:locale', content: 'ja_JP'}
-    %meta{property: 'og:image', content: 'http://youcune.com/images/apple-touch-icon.png'}
+    %meta{property: 'og:image', content: image_url('images/apple-touch-icon.png')}
     %meta{property: 'og:description', content: '@youcune のオフィシャルサイトです'}
     %title youcune.com | @youcune Portal
     = javascript_include_tag 'portal'
     = stylesheet_link_tag 'portal'
     %link{rel: 'author', href: 'http://google.me/+YuNakanishi'}
-    %link{rel: 'icon', type: 'image/png', href: '/images/favicon.png'}
-    %link{rel: 'apple-touch-icon', type: 'image/png', href: '/images/apple-touch-icon.png'}
+    %link{rel: 'icon', type: 'image/png', href: image_path('favicon.png')}
+    %link{rel: 'apple-touch-icon', type: 'image/png', href: image_path('apple-touch-icon.png')}
   %body
     #wrapper
       .viewport
