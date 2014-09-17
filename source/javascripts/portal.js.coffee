@@ -1,5 +1,6 @@
 #= require jquery-2.1.0
 #= require flipsnap.js
+#= require google-analytics
 
 setup_dummy = ->
   html = $('html').width();
