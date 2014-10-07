@@ -1,37 +1,37 @@
 @import 'bootstrap-custom';
 @import 'font-awesome';
 
-body{
-  > header{
-    div{
+body {
+  > header {
+    div {
       margin: 0;
 
-      img{
+      img {
         margin: 0 auto;
       }
     }
   }
 
-  > div#body{
+  > div#body {
     background: #ffffff;
     margin: auto;
     max-width: 960px;
 
-    div#main-column{
-      header{
+    div#main-column {
+      header {
         border-bottom: 1px solid #cccccc;
 
-        h2{
+        h2 {
           margin-bottom: 0;
         }
       }
-      article{
-        p{
-          img{
+      article {
+        p {
+          img {
             max-width: 100%;
           }
         }
-        p.ad-right, p.img-right{
+        p.ad-right, p.img-right {
           float: right;
           margin-left: 16px;
         }
@@ -41,31 +41,35 @@ body{
         p.dialog-b {
           color: darken($brand-danger, 30%);
         }
+        strong {
+          color: #ff3333;
+          font-weight: bold;
+        }
       }
     }
 
-    div#sub-column{
-      ul{
+    div#sub-column {
+      ul {
         margin-left: 0;
         padding-left: 0;
         list-style: none;
       }
 
-      aside#tag-cloud{
-        li{
+      aside#tag-cloud {
+        li {
           display: inline;
         }
       }
     }
   }
 
-  > footer{
+  > footer {
     margin: 8px auto;
     border-top: 1px solid #cccccc;
     padding-top: 8px;
     max-width: 960px;
 
-    p{
+    p {
       text-align: center;
     }
   }
