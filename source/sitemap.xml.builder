@@ -3,10 +3,7 @@
 changefreqs = {
   'index.html' => :weekly,
   'mono/index.html' => :daily,
-  /^mono\/tags\// => :weekly,
-  /^mono\/2014/ => :daily,
-  /^mono\/20\d\d/ => :never,
-  /^mono\/\w+\/[\w-]+\.html$/ => :never
+  /^mono\// => :weekly
 }
 
 # priority Definition Hash
@@ -14,9 +11,9 @@ changefreqs = {
 priorities = {
   'index.html' => 1.0,
   'mono/index.html' => 1.0,
-  /^mono\/tags\// => 0.4,
-  /^mono\/20\d\d/ => 0.4,
-  /^mono\/\w+\/[\w-]+\.html$/ => 0.8
+  /^mono\/tags\// => 0.5,
+  /^mono\/20\d\d/ => 0.1,
+  /^mono\/\w+\/[\w-]+\.html$/ => 1.0
 }
 
 xml.instruct!
@@ -24,7 +21,7 @@ xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
   sitemap.resources.each do |resource|
     xml.url do
       # loc
-      xml.loc "http://youcune.com#{resource.url}"
+      xml.loc "https://youcune.com#{resource.url}"
 
       # lastmod
       lastmod = resource.data.modify_date.presence || resource.data.date.presence

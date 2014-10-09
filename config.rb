@@ -20,7 +20,7 @@ activate :blog do |blog|
   blog.default_extension = '.md'
 
   blog.tag_template = 'mono/tag.html'
-  blog.calendar_template = 'mono/calendar.html'
+  blog.calendar_template = false
 
   # blog.paginate = true
   # blog.per_page = 10
