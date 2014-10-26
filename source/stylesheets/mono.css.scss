@@ -1,76 +1,63 @@
 @import 'bootstrap-custom';
 @import 'font-awesome';
 
-body {
-  > header {
-    div {
-      margin: 0;
+#header {
+  #monologo {
+    width: 100%;
+  }
+}
 
-      img {
-        margin: 0 auto;
-      }
+#main-column {
+  header {
+    border-bottom: 1px solid #cccccc;
+
+    h2 {
+      margin-bottom: 0;
     }
   }
-
-  > div#body {
-    background: #ffffff;
-    margin: auto;
-    max-width: 960px;
-
-    div#main-column {
-      header {
-        border-bottom: 1px solid #cccccc;
-
-        h2 {
-          margin-bottom: 0;
-        }
-      }
-      article {
-        p {
-          img {
-            max-width: 100%;
-          }
-        }
-        p.ad-right, p.img-right {
-          float: right;
-          margin-left: 16px;
-        }
-        p.dialog-a {
-          color: darken($brand-success, 30%);
-        }
-        p.dialog-b {
-          color: darken($brand-danger, 30%);
-        }
-        strong {
-          color: #ff3333;
-          font-weight: bold;
-        }
-      }
-    }
-
-    div#sub-column {
-      ul {
-        margin-left: 0;
-        padding-left: 0;
-        list-style: none;
-      }
-
-      aside#tag-cloud {
-        li {
-          display: inline;
-        }
-      }
-    }
-  }
-
-  > footer {
-    margin: 8px auto;
-    border-top: 1px solid #cccccc;
-    padding-top: 8px;
-    max-width: 960px;
-
+  article {
     p {
-      text-align: center;
+      img {
+        max-width: 100%;
+      }
     }
+    p.ad-right, p.img-right {
+      float: right;
+      margin-left: 16px;
+    }
+    p.dialog-a {
+      color: darken($brand-success, 30%);
+    }
+    p.dialog-b {
+      color: darken($brand-danger, 30%);
+    }
+    strong {
+      color: #ff3333;
+      font-weight: bold;
+    }
+  }
+}
+
+#sub-column {
+  ul {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  #tag-cloud {
+    li {
+      display: inline;
+    }
+  }
+}
+
+#footer {
+  margin: 8px auto;
+  border-top: 1px solid #cccccc;
+  padding-top: 8px;
+
+  p {
+    text-align: center;
   }
 }
