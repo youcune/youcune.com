@@ -10,17 +10,18 @@ activate :blog do |blog|
   blog.prefix = 'mono'
   blog.permalink = ':category/:slug.html'
   blog.sources = ':category/:yyyymmdd_:slug.html'
-  # blog.taglink = 'tags/:tag.html'
   blog.layout = 'mono-article'
   # blog.summary_separator = /(READMORE)/
   blog.summary_length = 150
+  blog.default_extension = '.md'
+
+  blog.taglink = 'tags/:tag/'
+  blog.tag_template = 'mono/archive.html'
+
+  blog.calendar_template = false
   # blog.year_link = ':year.html'
   # blog.month_link = ':year/:month.html'
   # blog.day_link = ':year/:month/:day.html'
-  blog.default_extension = '.md'
-
-  blog.tag_template = 'mono/tag.html'
-  blog.calendar_template = false
 
   blog.paginate = true
   blog.per_page = 5

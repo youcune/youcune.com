@@ -1,0 +1,13 @@
+---
+layout: mono
+---
+%section
+  %h2 #{tagname} タグのついた記事一覧
+  - page_articles.each do |article|
+    %article
+      %header
+        %h2= link_to article.title, article
+        %p
+          = icon('clock-o', format_date(article.date))
+          = icon('tag')
+          = blog_tag_links(article.tags)
