@@ -22,9 +22,9 @@ activate :blog do |blog|
   blog.tag_template = 'mono/tag.html'
   blog.calendar_template = false
 
-  # blog.paginate = true
-  # blog.per_page = 10
-  # blog.page_link = 'page/:num'
+  blog.paginate = true
+  blog.per_page = 5
+  blog.page_link = ':num'
 end
 
 ### 
