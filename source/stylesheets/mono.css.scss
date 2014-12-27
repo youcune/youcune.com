@@ -8,28 +8,37 @@
 }
 
 #main-column {
-  header {
-    border-bottom: 1px solid #cccccc;
-
-    h2 {
-      margin-bottom: 0;
-    }
-  }
   article {
+    header {
+      border-bottom: 1px dashed #cccccc;
+      margin-bottom: $line-height-computed;
+
+      h2 {
+        margin-bottom: 0;
+      }
+
+      p {
+        margin-bottom: $line-height-computed;
+      }
+    }
+
     p {
       img {
         max-width: 100%;
       }
-    }
-    p.ad-right, p.img-right {
-      float: right;
-      margin-left: 16px;
-    }
-    p.dialog-a {
-      color: darken($brand-success, 30%);
-    }
-    p.dialog-b {
-      color: darken($brand-danger, 30%);
+
+      &.ad-right, &.img-right {
+        float: right;
+        margin-left: 16px;
+      }
+
+      &.dialog-a {
+        color: darken($brand-success, 30%);
+      }
+
+      &.dialog-b {
+        color: darken($brand-danger, 30%);
+      }
     }
     strong {
       color: #ff3333;
