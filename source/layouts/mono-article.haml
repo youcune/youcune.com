@@ -6,7 +6,7 @@
         = icon('clock-o', format_date(current_page.data.date))
         = icon('tag')
         = blog_tag_links(current_page.data.tags.split(/,/))
-    = yield
+    ~ yield
     %footer
       .ninja_onebutton
         :javascript
