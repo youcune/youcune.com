@@ -5,8 +5,6 @@
     %meta{name: 'viewport', content: 'initial-scale=1,user-scalable=no'}
     = blog_meta_description(current_page.data.description)
     %title= blog_title(current_page.data.title)
-    = javascript_include_tag 'mono', '//platform.twitter.com/widgets.js'
-    = stylesheet_link_tag 'mono'
     %link{rel: 'alternate', type: 'application/rss+xml', title: 'RSS', href: 'http://youcune.com/mono/feed.xml'}
     %link{rel: 'author', href: 'http://google.me/+YuNakanishi'}
     %link{rel: 'icon', type: 'image/png', href: image_path('favicon.png')}
@@ -41,3 +39,5 @@
         %p.pull-right
           = link_to(icon('rss', 'RSS'), '/mono/feed.xml', class: 'btn btn-warning')
         %p.text-center &copy; youcune<br>営利目的の転載はお断りします
+    = javascript_include_tag 'mono', '//platform.twitter.com/widgets.js'
+    = stylesheet_link_tag 'mono'

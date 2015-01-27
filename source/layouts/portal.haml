@@ -10,8 +10,6 @@
     %meta{property: 'og:image', content: image_url('images/apple-touch-icon.png')}
     %meta{property: 'og:description', content: '@youcune のオフィシャルサイトです'}
     %title youcune.com | @youcune Portal
-    = javascript_include_tag 'portal'
-    = stylesheet_link_tag 'portal'
     %link{rel: 'author', href: 'http://google.me/+YuNakanishi'}
     %link{rel: 'icon', type: 'image/png', href: image_path('favicon.png')}
   %body
@@ -21,3 +19,5 @@
       #panel
         %button#btn-prev.btn.btn-default= icon('arrow-right', '', class: 'fa-2x')
         %button#btn-next.btn.btn-default= icon('arrow-left', '', class: 'fa-2x')
+    = javascript_include_tag 'portal'
+    = stylesheet_link_tag 'portal'
