@@ -32,7 +32,7 @@
             %ul
               - max_count = (blog.tags.values.map(&:size) << 2).max
               - blog.tags.each do |tag, articles|
-                %li= link_to tag, tag_path(tag), nil, style: 'font-size: ' + (Rational(articles.size, max_count) * 200).to_i.to_s + '%;'
+                %li= link_to tag, tag_path(tag), nil, style: 'font-size: ' + [75, (Rational(articles.size, max_count) * 200).to_i].max.to_s + '%;'
       %footer#footer
         %p.pull-left
           = link_to(icon('home', 'Portal'), '/?utm_source=mono&utm_medium=footer', class: 'btn btn-default')
