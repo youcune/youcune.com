@@ -1,9 +1,20 @@
 // -------------------------------------------------------------------
 // Bootstrap Overridden Variables
 // -------------------------------------------------------------------
-$font-family-sans-serif: "Lucida Grande", Verdana, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif
-$font-family-serif: Georgia, "Hiragino Mincho ProN", serif
-$font-family-monospace: Menlo, "Courier New", "Hiragino Kaku Gothic ProN", monospace
+//== Colors
+$brand-primary: #4CB55B
+
+//== Typography
+$font-family-sans-serif: 'Lucida Grande', Verdana, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif
+$font-family-serif: Georgia, 'Hiragino Mincho ProN', serif
+$font-family-monospace: Menlo, 'Courier New', 'Hiragino Kaku Gothic ProN', monospace
+$font-size-base:          14px
+$font-size-h1:            floor(($font-size-base * 2.15))
+$font-size-h2:            ceil(($font-size-base * 1.7))
+$font-size-h3:            ceil(($font-size-base * 1.25))
+$font-size-h4:            $font-size-base
+$font-size-h5:            ceil(($font-size-base * 0.85))
+$font-size-h6:            ceil(($font-size-base * 0.85))
 
 // -------------------------------------------------------------------
 // Bootstrap Core
@@ -62,15 +73,6 @@ $font-family-monospace: Menlo, "Courier New", "Hiragino Kaku Gothic ProN", monos
 // Utility classes
 @import bootstrap/utilities
 @import bootstrap/responsive-utilities
-
-// -------------------------------------------------------------------
-// Bootstrap Overridden Styles
-// -------------------------------------------------------------------
-a
-  text-decoration: underline
-
-a.btn
-  text-decoration: none
 
 // -------------------------------------------------------------------
 // Code-ray styles
