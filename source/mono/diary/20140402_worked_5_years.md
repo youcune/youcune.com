@@ -1,7 +1,7 @@
 ---
 title: 4月から社会人5年目になる俺へ
 date: 2014-04-02
-tags: Column
+tags: Diary
 ---
 
 ### 自分は何年目かわからん

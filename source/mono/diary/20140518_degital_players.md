@@ -1,7 +1,7 @@
 ---
 title: 今まで使ってきたデジタルオーディオプレイヤーを思い返してみた
 date: 2014-05-18
-tags: Column
+tags: Diary
 ---
 
 Amazon.co.jp の購入履歴を見ていたら、10年前に [Creative NOMAD MuVo2 1.5GB](http://www.amazon.co.jp/exec/obidos/ASIN/B00013PB7S/youcune-22) を買っていて懐かしくなったので、これまで使ってきたデジタルオーディオプレイヤーを紹介したいと思います。

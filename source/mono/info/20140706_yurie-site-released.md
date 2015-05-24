@@ -1,7 +1,7 @@
 ---
 title: ゆりえ Days のサイトを公開しました！
 date: 2014-07-06
-tags: Info
+tags: Info,Yo
 ---
 
 ### ゆりえ Days オープン
