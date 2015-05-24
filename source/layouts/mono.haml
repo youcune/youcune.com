@@ -3,15 +3,14 @@
   %head
     %meta{charset: 'utf-8'}
     %meta{name: 'viewport', content: 'initial-scale=1,user-scalable=no'}
-    = blog_meta_description(current_page.data.description)
+    %meta{name: 'description', content: page_description(current_page)}
     %meta{property: 'og:type', content: 'article'}
-    %meta{property: 'og:title', content: blog_title(current_page.data.title)}
-    - if current_page.data.description.present?
-      %meta{property: 'og:description', content: current_page.data.description}
-    %meta{property: 'og:url', content: "https://youcune.com#{current_page.url}"}
+    %meta{property: 'og:title', content: page_title(current_page)}
+    %meta{property: 'og:description', content: page_description(current_page)}
+    %meta{property: 'og:url', content: page_url(current_page)}
     %meta{content: 'summary', name: 'twitter:card'}
     %meta{content: '@youcune', name: 'twitter:site'}
-    %title= blog_title(current_page.data.title)
+    %title= page_title(current_page)
     %link{rel: 'alternate', type: 'application/rss+xml', title: 'RSS', href: 'http://youcune.com/mono/feed.xml'}
     %link{rel: 'author', href: 'http://google.me/+YuNakanishi'}
     %link{rel: 'icon', type: 'image/png', href: image_path('favicon.png')}

@@ -88,24 +88,30 @@ helpers do
     html.html_safe
   end
 
+  # 表示用の日時をフォーマットする（将来的に carnelian に切りだしたい）
   def format_date(date)
     date.strftime('%Y.%m.%d')
   end
 
-  def blog_title(title)
-    if title.kind_of?(String) && title.present?
-      "#{title} | Monolog"
-    else
-      'Monolog - @youcuneのブログ'
-    end
+  # 文字列を簡略・省略表示する（将来的に carnelian に切りだしたい）
+  def summerize(str, length = 100)
+    slimmed = str.gsub(/<.+?>/, '').gsub(/\s/, '')
+    slimmed.length > length ? "#{slimmed[0..length]}..." : slimmed
   end
 
-  def blog_meta_description(description)
-    if description.kind_of?(String) && description.present?
-      "<meta name=\"description\" content=\"#{description}\">"
-    else
-      ''
-    end
+  # current_page を渡してタイトルにすべき文字列を返す（将来的にブログ以外にも対応できるようにする）
+  def page_title(page)
+    page.data.title.present? ? "#{page.data.title} | Monolog" : 'Monolog'
+  end
+
+  # current_page を渡して description にすべき文字列を返す
+  def page_description(page)
+    page.data.description.presence || summerize(page.try(:body).to_s)
+  end
+
+  # current_page を渡して URL を返す
+  def page_url(page)
+    "https://youcune.com#{current_page.url}"
   end
 
   def blog_tag_links(tags)
