@@ -41,10 +41,6 @@
               - blog.tags.each do |tag, articles|
                 %li= link_to tag, tag_path(tag), nil, style: 'font-size: ' + [75, (Rational(articles.size, max_count) * 200).to_i].max.to_s + '%;'
       %footer#footer
-        %p.pull-left
-          = link_to(icon('home', 'Portal'), '/?utm_source=mono&utm_medium=footer', class: 'btn btn-default')
-        %p.pull-right
-          = link_to(icon('rss', 'RSS'), '/mono/feed.xml', class: 'btn btn-warning')
         %p.text-center &copy; youcune<br>営利目的の転載はお断りします
     = javascript_include_tag 'mono', '//platform.twitter.com/widgets.js'
     = stylesheet_link_tag 'mono'
