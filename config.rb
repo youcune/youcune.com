@@ -15,7 +15,7 @@ activate :blog do |blog|
   blog.summary_length = 150
   blog.default_extension = '.md'
 
-  blog.taglink = 'tags/:tag/'
+  blog.taglink = 'tags/:tag/index.html'
   blog.tag_template = 'mono/archive.html'
 
   blog.calendar_template = false
