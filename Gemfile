@@ -2,14 +2,13 @@ source 'https://rubygems.org'
 
 gem 'middleman'
 gem 'middleman-blog'
-gem 'middleman-deploy'
 
 # Markdown Parser
 gem 'rdiscount'
 
 # CSS Frameworks
-gem 'bootstrap-sass', require: false
-gem 'font-awesome-middleman', require: false
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
 
 # Javascript Runtime
 gem 'therubyracer'
@@ -17,8 +16,8 @@ gem 'therubyracer'
 # For building XML files
 gem 'builder'
 
-gem 'nokogiri'
-
 # For debugging
-gem 'byebug'
-gem 'pry'
+group :development do
+  gem 'byebug'
+  gem 'pry'
+end
