@@ -1,2 +1,2 @@
-#= require jquery-2.1.0
-#= require google-analytics
+#= require _jquery-2.1.4.min
+#= require _google-analytics
