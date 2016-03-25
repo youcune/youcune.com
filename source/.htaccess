@@ -1,5 +1,9 @@
 RewriteEngine on
 
+# http → https のリダイレクト
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
 # /mono/column/ 廃止前のリダイレクト
 RewriteRule ^mono/column/download-version.html http://stack.overflow.engineer/entry/2014/02/01/000000 [R=301,L]
 RewriteRule ^mono/column/stimulus.html http://stack.overflow.engineer/entry/2015/05/23/000000 [R=301,L]
