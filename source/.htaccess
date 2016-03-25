@@ -1,0 +1,33 @@
+RewriteEngine on
+
+# /mono/column/ 廃止前のリダイレクト
+RewriteRule ^mono/column/download-version.html http://stack.overflow.engineer/entry/2014/02/01/000000 [R=301,L]
+RewriteRule ^mono/column/stimulus.html http://stack.overflow.engineer/entry/2015/05/23/000000 [R=301,L]
+RewriteRule ^mono/column/worked_5_years.html http://stack.overflow.engineer/entry/2014/04/02/000000 [R=301,L]
+RewriteRule ^mono/column/degital_players.html http://stack.overflow.engineer/entry/2014/05/18/000000 [R=301,L]
+RewriteRule ^mono/column/github-1-year.html http://stack.overflow.engineer/entry/2014/10/25/000000 [R=301,L]
+RewriteRule ^mono/column/infants-growth.html http://stack.overflow.engineer/entry/2014/12/19/000000 [R=301,L]
+RewriteRule ^mono/column/2014-overview.html http://stack.overflow.engineer/entry/2015/01/02/000000 [R=301,L]
+RewriteRule ^mono/column/youcube-1st-anniversary.html http://stack.overflow.engineer/entry/2015/10/17/000000 [R=301,L]
+
+# 旧記事の移行
+RewriteRule ^mono/tech/xpath-tester-released.html http://stack.overflow.engineer/entry/2014/01/08/000000 [R=301,L]
+RewriteRule ^mono/thoughts/download-version.html http://stack.overflow.engineer/entry/2014/02/01/000000 [R=301,L]
+RewriteRule ^mono/photo/snowy_night.html http://stack.overflow.engineer/entry/2014/02/08/000000 [R=301,L]
+RewriteRule ^mono/mac/mac_operation.html http://stack.overflow.engineer/entry/2014/03/22/000000 [R=301,L]
+RewriteRule ^mono/diary/worked_5_years.html http://stack.overflow.engineer/entry/2014/04/02/000000 [R=301,L]
+RewriteRule ^mono/diary/degital_players.html http://stack.overflow.engineer/entry/2014/05/18/000000 [R=301,L]
+RewriteRule ^mono/info/yurie-site-released.html http://stack.overflow.engineer/entry/2014/07/06/000000 [R=301,L]
+RewriteRule ^mono/info/yurie-days-released.html http://stack.overflow.engineer/entry/2014/07/13/000000 [R=301,L]
+RewriteRule ^mono/info/moving-to-hyogo.html http://stack.overflow.engineer/entry/2014/09/13/000000 [R=301,L]
+RewriteRule ^mono/diary/github-1-year.html http://stack.overflow.engineer/entry/2014/10/25/000000 [R=301,L]
+RewriteRule ^mono/diary/infants-growth.html http://stack.overflow.engineer/entry/2014/12/19/000000 [R=301,L]
+RewriteRule ^mono/diary/2014-overview.html http://stack.overflow.engineer/entry/2015/01/02/000000 [R=301,L]
+RewriteRule ^mono/tech/browser-ui-5-rules.html http://stack.overflow.engineer/entry/2015/01/11/000000 [R=301,L]
+RewriteRule ^mono/thoughts/stimulus.html http://stack.overflow.engineer/entry/2015/05/23/000000 [R=301,L]
+RewriteRule ^mono/thoughts/imitation.html http://stack.overflow.engineer/entry/2015/05/24/000000 [R=301,L]
+RewriteRule ^mono/diary/youcube-1st-anniversary.html http://stack.overflow.engineer/entry/2015/10/17/000000 [R=301,L]
+
+# サイト全体の移行
+RewriteRule ^mono/$ http://stack.overflow.engineer/ [R=301,L]
+RewriteRule ^mono/ http://stack.overflow.engineer/ [R=302,L]

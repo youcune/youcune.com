@@ -1,10 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'middleman'
-gem 'middleman-blog'
-
-# Markdown Parser
-gem 'rdiscount'
+# Middleman v4 はアセットパイプラインが廃止になるので3で固定
+gem 'middleman', '~> 3.0'
 
 # CSS Frameworks
 gem 'bootstrap-sass'
@@ -12,9 +9,6 @@ gem 'font-awesome-sass'
 
 # Javascript Runtime
 gem 'therubyracer'
-
-# For building XML files
-gem 'builder'
 
 # For debugging
 group :development do
