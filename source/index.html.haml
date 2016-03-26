@@ -4,19 +4,21 @@
     = image_tag '//www.gravatar.com/avatar/bda36e025600f9e5a400dea0a1f08db1?s=160', alt: '', width: 80, height: 80, class: 'pull-right img-circle'
     %h1 なかにしゆう
     %ul.vertical
-      %li <i class="fa fa-suitcase"></i> <a href="http://youcube.jp/?utm_source=portal&amp;utm_medium=portal">YouCube LLC.</a>
-      %li <i class="fa fa-user"></i> Stack Overflow Engineer
-      %li <i class="fa fa-tag"></i> Rails, Linux, SEO
-      %li <i class="fa fa-envelope"></i> <a href="mailto:you@nakanishi.email">you@nakanishi.email</a>
-      %li{ style: 'margin-top: 18px;' }
-        = link_to(image_tag('mini_social_icons/twitter.png', alt: 'twitter', width: 20, height: 20), 'http://twitter.com/youcune')
+      %li #{icon('twitter')} #{link_to '@youcune', 'https://twitter.com/youcune'}
+      %li #{icon('envelope')} #{link_to 'you@nakanishi.email', 'mailto:you@nakanishi.email'}
+      %li #{icon('suitcase')} #{link_to 'YouCube LLC.', 'http://youcube.jp/?utm_source=portal&utm_medium=portal'}
+      %li= icon('star', 'Stack Overflow Engineer')
+      %li{ style: 'margin-top: 8px;' }
+        = link_to(image_tag('mini_social_icons/twitter.png', alt: 'twitter', width: 20, height: 20), 'https://twitter.com/youcune')
         = link_to(image_tag('mini_social_icons/hatena_blog.png', alt: 'はてなブログ', width: 20, height: 20), 'http://stack.overflow.engineer/?utm_source=portal&utm_medium=portal')
-        = link_to(image_tag('mini_social_icons/yo.png', alt: 'Yo', width: 20, height: 20), 'http://justyo.co/YOUCUNE')
-        = link_to(image_tag('mini_social_icons/instagram.png', alt: 'instagram', width: 20, height: 20), 'http://instagram.com/youcune')
-        = link_to(image_tag('mini_social_icons/foursquare.png', alt: 'foursquare', width: 20, height: 20), 'https://foursquare.com/youcune')
+        = link_to(image_tag('mini_social_icons/github_alt.png', alt: 'GitHub', width: 20, height: 20), 'https://github.com/youcune')
+        = link_to(image_tag('mini_social_icons/qiita.png', alt: 'Qiita', width: 20, height: 20), 'http://qiita.com/youcune?utm_source=portal&utm_medium=portal&utm_content=social_icon')
+        = link_to(image_tag('mini_social_icons/yo.png', alt: 'Yo', width: 20, height: 20), 'https://justyo.co/YOUCUNE')
         = link_to(image_tag('mini_social_icons/line.png', alt: 'LINE', width: 20, height: 20), 'http://line.naver.jp/ti/p/CAlaQYcnvs')
-        = link_to(image_tag('mini_social_icons/googleplus.png', alt: 'Google+', width: 20, height: 20), 'http://google.me/+YuNakanishi')
-        = link_to(image_tag('mini_social_icons/facebook.png', alt: 'facebook', width: 20, height: 20), 'http://facebook.com/youcune')
+        = link_to(image_tag('mini_social_icons/foursquare.png', alt: 'foursquare', width: 20, height: 20), 'https://foursquare.com/youcune')
+        = link_to(image_tag('mini_social_icons/instagram.png', alt: 'instagram', width: 20, height: 20), 'https://www.instagram.com/youcune/')
+        = link_to(image_tag('mini_social_icons/googleplus.png', alt: 'Google+', width: 20, height: 20), 'https://google.me/+YuNakanishi')
+        = link_to(image_tag('mini_social_icons/facebook.png', alt: 'facebook', width: 20, height: 20), 'https://facebook.com/youcune')
   .item
     %h2 Histories
     %table.table.table-condensed
