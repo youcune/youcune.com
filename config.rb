@@ -82,8 +82,14 @@ set :images_dir, 'images'
 
 # Build-specific configuration
 configure :build do
+  require 'uglifier'
+
+  activate :minify_html do |html|
+    html.remove_http_protocol  = false
+    html.remove_https_protocol = false
+  end
   activate :minify_css
-  activate :minify_javascript
+  activate :minify_javascript, compressor: Uglifier.new(comments: :none)
 
   # Enable cache buster
   activate :asset_hash

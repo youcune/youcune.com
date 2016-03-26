@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Middleman v4 はアセットパイプラインが廃止になるので3で固定
 gem 'middleman', '~> 3.0'
+gem 'middleman-minify-html'
 
 # CSS Frameworks
 gem 'bootstrap-sass'
