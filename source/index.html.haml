@@ -20,6 +20,17 @@
         = link_to(image_tag('mini_social_icons/googleplus.png', alt: 'Google+', width: 20, height: 20), 'https://google.me/+YuNakanishi')
         = link_to(image_tag('mini_social_icons/facebook.png', alt: 'facebook', width: 20, height: 20), 'https://facebook.com/youcune')
   .item
+    %h2 Blog
+    %pre
+      :preserve
+        <span class="code-keyword">if</span> theme.programming_knowledge?
+          <span class="code-comment"># プログラミング知識はQiitaに</span>
+          redirect_to <a href="http://qiita.com/youcune?utm_source=portal&amp;utm_medium=portal&amp;utm_content=card">Qiita</a>
+        <span class="code-keyword">else</span>
+          <span class="code-comment"># それ以外ははてなブログに書いています</span>
+          redirect_to <a href="http://stack.overflow.engineer/?utm_source=portal&amp;utm_medium=portal&amp;utm_content=card">はてなブログ</a>
+        <span class="code-keyword">end</span>
+  .item
     %h2 Histories
     %table.table.table-condensed
       %tr
@@ -45,7 +56,6 @@
       %span.label.label-default C#
       %span.label.label-default Java
       %span.label.label-default VBA
-      %span.label.label-default .NET ASP
       %span.label.label-default PostgreSQL
       %span.label.label-default MySQL
       %span.label.label-default Oracle
@@ -53,8 +63,6 @@
       %span.label.label-default DB2
       %span.label.label-default SQLite
       %span.label.label-default SEO
-      %span.label.label-default UI
-      %span.label.label-default UX
       %span.label.label-default Mac
       %span.label.label-default Linux
       %span.label.label-default AWS
@@ -64,18 +72,6 @@
       %span.label.label-default JavaScript
       %span.label.label-default jQuery
       %span.label.label-default Git
-      %span.label.label-default GitHub
-  .item
-    %h2 Blog
-    %pre
-      :preserve
-        <span class="code-keyword">if</span> theme.programming_knowledge?
-          <span class="code-comment"># プログラミング知識はQiitaに</span>
-          redirect_to <a href="http://qiita.com/youcune?utm_source=portal&amp;utm_medium=portal&amp;utm_content=card">Qiita</a>
-        <span class="code-keyword">else</span>
-          <span class="code-comment"># それ以外ははてなブログに書いています</span>
-          redirect_to <a href="http://stack.overflow.engineer/?utm_source=portal&amp;utm_medium=portal&amp;utm_content=card">はてなブログ</a>
-        <span class="code-keyword">end</span>
   .item#yurie
     %h2 ゆりえDays
     %p は、ゆりえと <a href="http://www.justyo.co/">Yo</a> でコミュニケーションできる新感覚サービスです。
