@@ -1,5 +1,4 @@
-.flipsnap
-  #dummy.item
+#items
   .item
     = image_tag '//www.gravatar.com/avatar/bda36e025600f9e5a400dea0a1f08db1?s=160', alt: '', width: 80, height: 80, class: 'pull-right img-circle'
     %h1 なかにしゆう
@@ -21,7 +20,7 @@
         <span class="code-keyword">end</span>
   .item
     %h2 Histories
-    %table.table.table-condensed
+    %table
       %tr
         %th 2006
         %td 関西学院大学商学部 入学
@@ -34,50 +33,37 @@
       %tr
         %th 2014
         %td ユーキューブ 設立
-  .item
+  .item#skills
     %h2 Skills
-    %p{ style: 'line-height: 1.5;' }
-      %span.label.label-default Ruby
-      %span.label.label-default Rails
-      %span.label.label-default PHP
-      %span.label.label-default CakePHP
-      %span.label.label-default WordPress
-      %span.label.label-default C#
-      %span.label.label-default Java
-      %span.label.label-default VBA
-      %span.label.label-default PostgreSQL
-      %span.label.label-default MySQL
-      %span.label.label-default Oracle
-      %span.label.label-default SQL Server
-      %span.label.label-default DB2
-      %span.label.label-default SQLite
-      %span.label.label-default SEO
-      %span.label.label-default Mac
-      %span.label.label-default Linux
-      %span.label.label-default AWS
-      %span.label.label-default HTML5
-      %span.label.label-default CSS3
-      %span.label.label-default Bootstrap
-      %span.label.label-default JavaScript
-      %span.label.label-default jQuery
-      %span.label.label-default Git
+    %p
+      %span Ruby
+      %span Rails
+      %span WordPress
+      %br/
+      %span AWS
+      %span VPS
+      %br/
+      %span HTML5
+      %span CSS3
+      %span Bootstrap
+      %span JavaScript
+      %span jQuery
+      %span vue
+      %br/
+      %span Web Marketing
+      %span SEO
   .item#yurie
     %h2 ゆりえDays
-    %p は、ゆりえと <a href="http://www.justyo.co/">Yo</a> でコミュニケーションできる新感覚サービスです。
-    %p.text-center= link_to(icon('rocket', 'はじめる'), 'http://yurie.sexy/?utm_source=portal&utm_medium=portal&utm_content=card', class: 'btn btn-primary')
+    %p は、ゆりえと <a href="http://www.justyo.co/">Yo</a> でコミュニケーションできる新感覚サービスです（現在不安定）
+    %p.action= link_to(icon('rocket', 'はじめる'), 'http://yurie.sexy/?utm_source=portal&utm_medium=portal&utm_content=card', class: 'btn btn-primary')
   .item
-    %p.pull-right= image_tag('images/portal/yasetter.png', alt: '', width: 128, height: 128)
+    %p.pull-right= image_tag('yasetter.png', alt: '', width: 128, height: 128)
     %h2 やせったー
     %p は、 SNS と連携できる体重・目標管理 Web サービスです。
-    %p.text-center= link_to(icon('rocket', 'はじめる'), 'http://yasetter.com/?utm_source=portal&utm_medium=portal&utm_content=card', class: 'btn btn-primary')
+    %p.action= link_to(icon('rocket', 'はじめる'), 'http://yasetter.com/?utm_source=portal&utm_medium=portal&utm_content=card', class: 'btn btn-primary')
   .item
     %h2 misc
     %ul.vertical
-      %li= link_to 'OnePad', 'http://onepad.anone.me/?utm_source=portal&utm_medium=portal&utm_content=card'
-      %li
-        = link_to 'XPath Tester', 'http://xpath-tester.herokuapp.com/'
-        %span.label.label-default 開発者向け
+      %li= link_to 'XPath Tester（開発者向け）', 'http://xpath-tester.herokuapp.com/'
       %li= link_to 'なぜ俺bot', 'http://twitter.com/nazeore_bot'
-      %li
-        = link_to 'ILC bot', 'http://twitter.com/ILC_bot'
-        %span.label.label-default IBM社員向け
+      %li= link_to 'ILC bot（IBM社員向け）', 'http://twitter.com/ILC_bot'

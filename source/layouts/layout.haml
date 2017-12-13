@@ -13,15 +13,15 @@
     %link{rel: 'author', href: 'http://google.me/+YuNakanishi'}
     %link{rel: 'shortcut icon', type: 'image/png', href: image_path('favicon.png')}
     %link{rel: 'apple-touch-icon', type: 'image/png', href: image_path('favicon.png')}
-    = javascript_include_tag 'portal'
-    = stylesheet_link_tag 'portal'
+    = javascript_include_tag 'portal', defer: true
+    = stylesheet_link_tag 'all'
   %body
     #wrapper
       .viewport
         = yield
       #panel
-        %button#btn-prev.btn.btn-default= icon('arrow-right', '', class: 'fa-2x')
-        %button#btn-next.btn.btn-default= icon('arrow-left', '', class: 'fa-2x')
+        %button#btn-prev.btn= icon('arrow-right', '', class: 'fa-2x')
+        %button#btn-next.btn= icon('arrow-left', '', class: 'fa-2x')
     :javascript
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

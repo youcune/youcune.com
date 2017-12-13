@@ -5,7 +5,6 @@ gem 'middleman', '~> 3.0'
 gem 'middleman-minify-html'
 
 # CSS Frameworks
-gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 
 # Javascript Runtime
