@@ -74,4 +74,5 @@ configure :build do
   activate :minify_javascript
   activate :minify_html
   activate :asset_hash
+  activate :gzip
 end
