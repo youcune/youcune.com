@@ -7,5 +7,5 @@
         .card-body
           %h2.card-title= article.title
           %p.card-text= article.summary(50)
-          %p.card-text.small.text-muted
+          %p.card-text
             %time= icon('fal', 'clock', article.date.strftime('%Y/%m/%d'))

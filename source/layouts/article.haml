@@ -2,6 +2,8 @@
   %article
     %header
       %h1= current_page.title
+      %p
+        %time= icon('fal', 'clock', current_page.date.strftime('%Y/%m/%d'))
       - if current_page.data.image.present?
         = image_tag current_page.data.image, alt: ''
     = yield
