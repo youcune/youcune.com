@@ -1,0 +1,118 @@
+:sass
+  // -------------------------------------------------------------------
+  // Variables
+  // -------------------------------------------------------------------
+  $enable-rounded: false
+  $primary: #4CB55B
+  $font-family-serif: Georgia,游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,serif
+  $spacer-lg: 4rem
+
+  @import 'bootstrap/functions'
+  @import 'bootstrap/variables'
+
+  $theme-colors: ('primary': $primary, 'twitter': #1b95e0, 'hatena': #00a4de, 'facebook': #365899)
+
+  // -------------------------------------------------------------------
+  // Bootstrap
+  // -------------------------------------------------------------------
+  @import 'bootstrap/mixins'
+  //@import 'bootstrap/root'
+  //@import 'bootstrap/reboot'
+  //@import 'bootstrap/type'
+  //@import 'bootstrap/images'
+  @import 'bootstrap/code'
+  //@import 'bootstrap/grid'
+  //@import 'bootstrap/tables'
+  //@import 'bootstrap/forms'
+  @import 'bootstrap/buttons'
+  //@import 'bootstrap/transitions'
+  //@import 'bootstrap/dropdown'
+  //@import 'bootstrap/button-group'
+  //@import 'bootstrap/input-group'
+  //@import 'bootstrap/custom-forms'
+  //@import 'bootstrap/nav'
+  //@import 'bootstrap/navbar'
+  @import 'bootstrap/card'
+  //@import 'bootstrap/breadcrumb'
+  //@import 'bootstrap/pagination'
+  //@import 'bootstrap/badge'
+  //@import 'bootstrap/jumbotron'
+  //@import 'bootstrap/alert'
+  //@import 'bootstrap/progress'
+  //@import 'bootstrap/media'
+  //@import 'bootstrap/list-group'
+  //@import 'bootstrap/close'
+  //@import 'bootstrap/modal'
+  //@import 'bootstrap/tooltip'
+  //@import 'bootstrap/popover'
+  //@import 'bootstrap/carousel'
+  //@import 'bootstrap/utilities'
+  //@import 'bootstrap/print'
+
+  .card
+    color: $body-color
+
+  .card-title
+    margin-top: 0
+
+  .btn-xs
+    @include button-size(2px, 4px, 12px, 14px, $btn-border-radius-sm)
+    font-family: $font-family-sans-serif
+
+  // -------------------------------------------------------------------
+  // Reset
+  // -------------------------------------------------------------------
+  *
+    box-sizing: border-box
+    font-family: $font-family-serif
+
+  h1, h2, h3, h4, h5, h6, p
+    color: $body-color
+
+  img
+    vertical-align: middle
+
+  // -------------------------------------------------------------------
+  // Layout
+  // -------------------------------------------------------------------
+  .container
+    max-width: 1110px
+    margin: 0 auto
+
+    > header
+      margin: $spacer-lg 0
+
+    > footer
+      color: #55acee
+      text-align: right
+
+  // -------------------------------------------------------------------
+  // Article
+  // -------------------------------------------------------------------
+  article
+    max-width: 800px
+    margin: 0 auto $spacer-lg
+
+    img
+      width: 100%
+      height: auto
+
+    > header
+      margin-bottom: $spacer-lg
+
+    > footer
+      margin-top: $spacer-lg
+
+  // -------------------------------------------------------------------
+  // Type
+  // -------------------------------------------------------------------
+  a
+    text-decoration: none
+    color: $primary
+    &:focus, &:hover, &:active
+      text-decoration: underline
+
+  time
+    color: $gray-500
+    font-size: $font-size-sm
+

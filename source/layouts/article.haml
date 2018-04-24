@@ -9,4 +9,3 @@
       = link_to(icon('fab', 'twitter', 'ツイート'), "https://twitter.com/share?#{ { url: "https://youcune.com#{current_page.url}", via: 'youcune', text: current_page.title }.to_query }", class: 'btn btn-twitter btn-xs', target: '_blank')
       = link_to('B!', "https://b.hatena.ne.jp/entry/s/youcune.com#{current_page.url}", class: 'btn btn-hatena btn-xs', target: '_blank')
       = link_to(icon('fab', 'facebook-square', 'シェア'), "https://www.facebook.com/sharer/sharer.php?u=https://youcune.com#{current_page.url}", class: 'btn btn-facebook btn-xs', target: '_blank')
-      = link_to(icon('fal', 'comment', 'LINEで送る'), "http://line.me/R/msg/text/?https://youcune.com#{current_page.url}", class: 'btn btn-line btn-xs', target: '_blank')
