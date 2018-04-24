@@ -1,7 +1,14 @@
 ---
 pageable: true
-per_page: 10
 ---
+%h1
+  - case page_type
+  - when 'day'
+    = Date.new(year, month, day).strftime('%Y年%m月%d日の記事')
+  - when 'month'
+    = Date.new(year, month, 1).strftime('%Y年%m月の記事')
+  - when 'year'
+    #{year}年の記事
 = render_partial 'layouts/articles-cards'
 - if paginate && num_pages > 1
   %p

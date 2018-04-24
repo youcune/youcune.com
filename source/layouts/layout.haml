@@ -1,31 +1,48 @@
-!!! 5
+!!!
 %html
   %head
-    %meta{charset: 'utf-8'}
-    %meta{name: 'viewport', content: 'initial-scale=1,user-scalable=no'}
-    %meta{property: 'og:title', content: 'youcune.com'}
-    %meta{property: 'og:type', content: 'website'}
-    %meta{property: 'og:url', content: 'https://youcune.com/'}
-    %meta{property: 'og:locale', content: 'ja_JP'}
-    %meta{property: 'og:image', content: image_url('images/apple-touch-icon.png')}
-    %meta{property: 'og:description', content: '@youcune のオフィシャルサイトです'}
-    %title @youcune
-    %link{rel: 'author', href: 'http://google.me/+YuNakanishi'}
-    %link{rel: 'shortcut icon', type: 'image/png', href: image_path('favicon.png')}
-    %link{rel: 'apple-touch-icon', type: 'image/png', href: image_path('favicon.png')}
-    = javascript_include_tag 'portal', defer: true
-    = stylesheet_link_tag 'all'
-  %body
-    #wrapper
-      .viewport
-        = yield
-      #panel
-        %button#btn-prev.btn= icon('arrow-right', '', class: 'fa-2x')
-        %button#btn-next.btn= icon('arrow-left', '', class: 'fa-2x')
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    = javascript_include_tag '//www.googletagmanager.com/gtag/js?id=UA-42388188-2', async: true
     :javascript
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-42388188-2', 'auto');
-      ga('send', 'pageview');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-42388188-2');
+    :javascript
+      (function(d) {
+        var config = {
+          kitId: 'eix5qxy',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    %meta{charset: 'utf-8'}
+    %meta{content: 'width=device-width, initial-scale=1', name: 'viewport'}
+    = stylesheet_link_tag 'all'
+    = javascript_include_tag '//pro.fontawesome.com/releases/v5.0.10/js/light.js', '//pro.fontawesome.com/releases/v5.0.10/js/brands.js', '//pro.fontawesome.com/releases/v5.0.10/js/fontawesome.js', defer: true, crossorigin: 'anonymous'
+    %title
+      #{current_article.title + '｜' unless current_article.nil?}youcune.com
+    = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
+  %body
+    .container
+      %header
+        %h1= link_to 'youcune.com', '/'
+        %p <a href="https://youcube.jp/">合同会社ユーキューブ</a>代表。好きな言語は関西弁で好きなRubyのメソッドはObject#tapで好きなブキはN-ZAP89で好きな二次元キャラクターは<a href="https://yurie.sexy/">ゆりえちゃん</a>です。
+      %main
+        = yield
+      %aside
+        %h2 最新記事
+        %ul
+          - blog.articles[0...10].each do |article|
+            %li= link_to("#{article.date.strftime('%Y/%m/%d')} #{article.title}", article)
+        %h2 タグ
+        %ul
+          - blog.tags.each do |tag, articles|
+            %li= link_to "#{tag} (#{articles.size})", tag_path(tag)
+        %h2 アーカイブ
+        %ul
+          - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+            %li= link_to "#{year} (#{articles.size})", blog_year_path(year)
+      %footer
+        = link_to(icon('fab', 'twitter', '@youcune', style: 'color: #55acee;'), 'https://twitter.com/youcune')

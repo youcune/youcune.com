@@ -1,104 +1,77 @@
 ###
-# Compass
-###
-
-# Susy grids in Compass
-# First: gem install susy
-# require 'susy'
-
-# Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
-
-###
 # Page options, layouts, aliases and proxies
 ###
 
 # Per-page layout changes:
 #
 # With no layout
-# page '/path/to/file.html', :layout => false
-#
+page '/*.xml', layout: false
+page '/*.json', layout: false
+page '/*.txt', layout: false
+
 # With alternative layout
-# page '/path/to/file.html', :layout => :otherlayout
-#
-# A path which all have the same layout
-# with_layout :admin do
-#   page '/admin/*'
+page 'articles/20*', layout: :article
+
+# Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
+# proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
+#  which_fake_page: "Rendering a fake page with a local variable" }
+
+activate :blog do |blog|
+  # This will add a prefix to all links, template references and source paths
+  # blog.prefix = "blog"
+
+  # blog.permalink = "{year}/{month}/{day}/{title}.html"
+  # Matcher for blog source files
+  blog.sources = "articles/{year}/{month}{day}-{title}.html"
+  # blog.taglink = "tags/{tag}.html"
+  blog.layout = "layouts/layout"
+  # blog.summary_separator = /(READMORE)/
+  # blog.summary_length = 250
+  blog.summary_generator = -> (article, body, length, ellipse) {
+    body.gsub(/<[^>]+>/, '').gsub(/\s+/m, ' ').tap do |summary|
+      break "#{summary.slice(0, length)} #{ellipse}" if summary.length > length
+    end
+  }
+  # blog.year_link = "{year}.html"
+  # blog.month_link = "{year}/{month}.html"
+  # blog.day_link = "{year}/{month}/{day}.html"
+  blog.default_extension = ".md"
+
+  blog.tag_template = "tag.html"
+  blog.calendar_template = "calendar.html"
+
+  # Enable pagination
+  # blog.paginate = true
+  # blog.per_page = 10
+  # blog.page_link = "page/{num}"
+end
+
+# Reload the browser automatically whenever files change
+# configure :development do
+#   activate :livereload
 # end
-
-# Proxy (fake) files
-# page '/this-page-has-no-template.html', :proxy => '/template-file.html' do
-#   @which_fake_page = 'Rendering a fake page with a variable'
-# end
-
-###
-# Helpers
-###
-
-# Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     'Helping'
-#   end
-# end
-
 helpers do
-  def icon(icon, text="", html_options={})
-    content_class = "fa fa-#{icon}"
+  def icon(style, name, text = nil, html_options = {})
+    text, html_options = nil, text if text.is_a?(Hash)
+
+    content_class = "#{style} fa-#{name}"
     content_class << " #{html_options[:class]}" if html_options.key?(:class)
     html_options[:class] = content_class
 
     html = content_tag(:i, nil, html_options)
-    html << " #{text}" unless text.blank?
-    html.html_safe
-  end
-
-  # get Qiita Popular Posts
-  def qiita_posts(post_count = 5)
-    str = ''
-    JSON.parse(Net::HTTP.get(URI.parse('https://qiita.com/api/v1/users/youcune/items?per_page=100')))
-      .sort { |a, b| b['stock_count'] <=> a['stock_count'] }
-      .first(post_count)
-      .each do |a|
-        str += "<li><a href=\"#{a['url']}?utm_source=portal&amp;utm_medium=portal&amp;utm_content=card\">#{a['title']} (#{a['stock_count']})</a></li>"
-      end
-    str.html_safe
-  end
-
-  # returns image url
-  def image_url(source)
-    "http://youcune.com#{image_path(source)}"
+    html << ' ' << text.to_s unless text.blank?
+    html
   end
 end
 
-set :css_dir, 'stylesheets'
-set :js_dir, 'javascripts'
-set :images_dir, 'images'
+activate :directory_indexes
 
 # Build-specific configuration
 configure :build do
-  require 'uglifier'
-
-  activate :minify_html do |html|
-    html.remove_http_protocol  = false
-    html.remove_https_protocol = false
-  end
   activate :minify_css
-  activate :minify_javascript, compressor: Uglifier.new(comments: :none)
-
-  # Enable cache buster
-  activate :asset_hash
-
-  # Use relative URLs
-  # activate :relative_assets
-
-  # Compress PNGs after build
-  # First: gem install middleman-smusher
-  # require 'middleman-smusher'
-  # activate :smusher
+  activate :minify_javascript
+  activate :minify_html
+  activate :assets_hash
 end

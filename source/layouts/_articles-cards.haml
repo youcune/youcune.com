@@ -1,0 +1,11 @@
+.card-columns
+  - page_articles.each_with_index do |article, i|
+    = link_to article do
+      .card
+        - if article.data.image.present?
+          = image_tag article.data.image, alt: '', class: 'card-img-top'
+        .card-body
+          %h2.card-title= article.title
+          %p.card-text= article.summary(50)
+          %p.card-text.small.text-muted
+            %time= icon('fal', 'clock', article.date.strftime('%Y/%m/%d'))

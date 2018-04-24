@@ -1,17 +1,17 @@
+# If you do not have OpenSSL installed, change
+# the following line to use 'http://'
 source 'https://rubygems.org'
 
-# Middleman v4 はアセットパイプラインが廃止になるので3で固定
-gem 'middleman', '~> 3.0'
+gem 'middleman', '~> 4.3.0.rc.1'
+gem 'middleman-blog'
 gem 'middleman-minify-html'
 
-# CSS Frameworks
-gem 'font-awesome-sass'
-
-# Javascript Runtime
+gem 'bootstrap'
+gem 'redcarpet'
+gem 'builder'
 gem 'therubyracer'
+gem 'nokogiri'
 
-# For debugging
-group :development do
-  gem 'byebug'
-  gem 'pry'
-end
+# この問題が解決されるまでバージョン固定
+# https://github.com/middleman/middleman/issues/2126
+gem 'contracts', '0.14.0'
