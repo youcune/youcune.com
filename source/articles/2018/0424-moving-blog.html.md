@@ -3,7 +3,6 @@ title: ブログを引っ越します
 image: 2018/0424-moving.jpg
 tags: information
 ---
-
 ## はてなブログから引っ越しを決意
 
 しました。理由はこんなかんじです。
@@ -15,4 +14,4 @@ tags: information
 
 ## これから
 
-Middlemanで書いています。過去の記事も徐々に移行していく予定です。
+[Middleman](https://middlemanapp.com/jp/)で書いて[Netlify](https://www.netlify.com/)でホストする構成でやってみます。過去の記事も徐々に移行していく予定です。

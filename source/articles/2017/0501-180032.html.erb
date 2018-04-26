@@ -1,0 +1,56 @@
+---
+title: フレッツ光でGMOとくとくBBのv6プラス（IPoE）と固定IPのPPPoEを併用した話
+tags: network
+---
+<p>オフィスのネット回線が夜は1Mbpsぐらいまで低下することもあり、「LTEより遅い固定回線って意味ないよな」と思い、いろいろ検討しました。なにやら、「PPPoEよりIPoEの方が速い」と聞いたので、調べつつ「v6プラス」を使い始めてみました。</p>
+
+<h3>環境</h3>
+
+<ul>
+<li>NTT西日本</li>
+<li>フレッツ光ネクスト隼</li>
+<li>ひかり電話の契約なし</li>
+<li>ONUはGE-PON-ONUタイプD<1></li>
+</ul>
+
+
+<h3>要件</h3>
+
+<ul>
+<li>v6プラスで高速化したい</li>
+<li>固定IPが使えるIPv4も使いたい</li>
+<li>NTTとプロバイダを別契約にしているので、合算請求ではなくプロバイダ単体で契約できる業者を選びたい</li>
+</ul>
+
+
+<h3>やったこと</h3>
+
+<h4>GMOとくとくBBを契約</h4>
+
+<p>v6プラスだと、BIGLOBEや@niftyを使っている方が多そうでしたが、料金ページを見てもNTTと合算した金額しか掲載されておらず、プロバイダ単独で契約できないのかな？　と思いGMOとくとくBBを候補に絞る。半年間無料でモニターやっていたので応募した。GMOとくとくBBは、安く固定IPがついたPPPoE接続のプランもあったので、v6プラスと請求をまとめられると思ってここに決めました。</p>
+
+<p><iframe src="//hatenablog-parts.com/embed?url=http%3A%2F%2Fgmobb.jp%2Flp%2Fflets_v6plus%2F" title="フレッツ光対応「v6プラス」｜GMOとくとくBB" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="http://gmobb.jp/lp/flets_v6plus/">gmobb.jp</a></cite></p>
+
+<p>が、「ひかり電話をご契約の方が対象」とのことで落選。そして普通に申し込み。</p>
+
+<h4>ルーターとスイッチングハブを購入</h4>
+
+<p>ハブを通すと、v6プラスのネットワークとPPPoEのネットワークが1つのフレッツ光契約で共存できるらしいので、こんな感じで構成。</p>
+
+<p><span itemscope itemtype="http://schema.org/Photograph"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/youcune/20170501/20170501175055.jpg" alt="f:id:youcune:20170501175055j:plain" title="f:id:youcune:20170501175055j:plain" class="hatena-fotolife" itemprop="image"></span></p>
+
+<p>v6プラスに対応している製品が少ない中、手の届きやすい価格でありながらかなり高性能とすぐれたモデルだと感じて購入（<strong>ひかり電話を利用していない場合は、Wi-Fiルーターのレンタルが必須のようです。機種にこだわりがなければ購入の必要はありません</strong>）。</p>
+
+<p><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B01FJESVTS/stack-overflow-engineer-22/"><img src="https://images-fe.ssl-images-amazon.com/images/I/41T-qlHfHzL._SL160_.jpg" class="hatena-asin-detail-image" alt="BUFFALO 無線LAN親機 11ac/n/a/g/b 1733+800Mbps  Giga 1.4GHz デュアルコアCPU【 Nintendo Switch動作確認済】 WXR-2533DHP2" title="BUFFALO 無線LAN親機 11ac/n/a/g/b 1733+800Mbps  Giga 1.4GHz デュアルコアCPU【 Nintendo Switch動作確認済】 WXR-2533DHP2"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B01FJESVTS/stack-overflow-engineer-22/">BUFFALO 無線LAN親機 11ac/n/a/g/b 1733+800Mbps  Giga 1.4GHz デュアルコアCPU【 Nintendo Switch動作確認済】 WXR-2533DHP2</a></p><ul><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> バッファロー</li><li><span class="hatena-asin-detail-label">発売日:</span> 2016/05/27</li><li><span class="hatena-asin-detail-label">メディア:</span> Personal Computers</li><li><a href="http://d.hatena.ne.jp/asin/B01FJESVTS/stack-overflow-engineer-22" target="_blank">この商品を含むブログ (1件) を見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div></p>
+
+<p>ハブ使ったことなかったので不安だったんですが、これ使えばひとまず動いています。</p>
+
+<p><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B013J9F64S/stack-overflow-engineer-22/"><img src="https://images-fe.ssl-images-amazon.com/images/I/31CMNpfAE2L._SL160_.jpg" class="hatena-asin-detail-image" alt="BUFFALO Giga対応 プラスチック筐体 AC電源 5ポート ホワイト スイッチングハブ ローコスト版 LSW4-GT-5EPL/WH" title="BUFFALO Giga対応 プラスチック筐体 AC電源 5ポート ホワイト スイッチングハブ ローコスト版 LSW4-GT-5EPL/WH"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B013J9F64S/stack-overflow-engineer-22/">BUFFALO Giga対応 プラスチック筐体 AC電源 5ポート ホワイト スイッチングハブ ローコスト版 LSW4-GT-5EPL/WH</a></p><ul><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> バッファロー</li><li><span class="hatena-asin-detail-label">発売日:</span> 2015/08/28</li><li><span class="hatena-asin-detail-label">メディア:</span> Personal Computers</li><li><a href="http://d.hatena.ne.jp/asin/B013J9F64S/stack-overflow-engineer-22" target="_blank">この商品を含むブログを見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div></p>
+
+<h4>ルーターの設定</h4>
+
+<p>数日でNTTから「v6接続オプション開通したよー」という書面が届きました（GMOとくとくBBが代理でオプション入ってなかったらやってくれるみたい）。GMOとくとくBBから、「v6プラス接続サービス開通のお知らせ」というメールが来れば利用可能になります。ルーターの管理画面から「v6プラス」と選ぶとよしなに設定してくれます。ぼくはこのメールが届く前に設定しようとしており、「v6プラス接続サービスへの通信に失敗しました　しばらくお待ちの上で、再度、実行してください」とエラーが出て悩まされました。書類にはすぐ開通しますと書いてあるのが悪いと思うし、ぼくはGMOBBから提供されるメールアドレスに届いたので見落とすかと思いました。</p>
+
+<p>速度測定すると、250Mbpsぐらいでてビビりました。。</p>
+
+<p>まだ使っている人があまり多くなく、いろいろ調べながらやったので書き残しておきます。</p>

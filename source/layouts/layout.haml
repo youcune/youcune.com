@@ -8,19 +8,20 @@
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-42388188-2', 'auto');
       ga('send', 'pageview');
-    %meta{charset: 'utf-8'}
-    %meta{content: 'width=device-width, initial-scale=1', name: 'viewport'}
+    %meta{ charset: 'utf-8' }
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1' }
+    %meta{ name: 'author', content: 'https://google.me/+YuNakanishi' }
     = partial 'layouts/all-sass'
     = javascript_include_tag '//pro.fontawesome.com/releases/v5.0.10/js/light.js', '//pro.fontawesome.com/releases/v5.0.10/js/brands.js', '//pro.fontawesome.com/releases/v5.0.10/js/fontawesome.js', defer: true, crossorigin: 'anonymous'
     %title
-      #{current_article.title + '｜' unless current_article.nil?}youcune.com
+      #{current_page.data.title + '｜' if current_page.data.title.present?}youcune.com
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
   %body
     .container
       %header
         %h1= link_to 'youcune.com', '/'
-        %p <a href="https://youcube.jp/">合同会社ユーキューブ</a>代表。好きな言語は関西弁で好きなRubyのメソッドはObject#tapで好きなブキはN-ZAP89で好きな二次元キャラクターは<a href="https://yurie.sexy/">ゆりえちゃん</a>です。
       %main
         = yield
       %footer
-        = link_to(icon('fab', 'twitter', '@youcune', style: 'color: #55acee;'), 'https://twitter.com/youcune')
+        %p 内容にお気づきの点がありましたら #{link_to(icon('fab', 'github', 'Pull Request'), 'https://github.com/youcune/youcune.com')} いただけると喜びます。
+        %p <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja"><img alt="クリエイティブ・コモンズ・ライセンス" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>

@@ -1,0 +1,9 @@
+= wrap_layout :layout do
+  %article
+    %header
+      %h1= current_page.data.title
+      - if current_page.data.image.present?
+        = image_tag current_page.data.image, alt: ''
+    = yield
+  %aside
+    = partial 'layouts/articles-cards', locals: { articles: blog.articles[0...5] }

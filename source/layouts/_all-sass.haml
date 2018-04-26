@@ -10,7 +10,7 @@
   @import 'bootstrap/functions'
   @import 'bootstrap/variables'
 
-  $theme-colors: ('primary': $primary, 'twitter': #1b95e0, 'hatena': #00a4de, 'facebook': #365899)
+  $theme-colors: ('primary': $primary, 'twitter': #1b95e0, 'hatena': #00a4de, 'facebook': #365899, 'github': #24292e)
 
   // -----------------------------------------------------------------
   // Bootstrap
@@ -95,8 +95,8 @@
       margin: $spacer-lg 0
 
     > footer
-      color: #55acee
-      text-align: right
+      color: $gray-500
+      font-size: $font-size-sm
 
   // -----------------------------------------------------------------
   // Article
@@ -104,6 +104,7 @@
   article
     max-width: 800px
     margin: 0 auto $spacer-lg
+    line-height: 1.732
 
     img
       width: 100%
@@ -137,12 +138,14 @@
     time
       margin-right: 0.5rem
 
-  .list-inline
-    padding-left: 0
-    list-style: none
+  // -----------------------------------------------------------------
+  // Lists
+  // -----------------------------------------------------------------
+  .list-unstyled, .list-inline
+    @include list-unstyled
 
-    > li
-      display: inline-block
+  .list-inline > li
+    display: inline-block
 
-      &:not(:last-child)
-        margin-right: 0.5rem
+    &:not(:last-child)
+      margin-right: $list-inline-padding
