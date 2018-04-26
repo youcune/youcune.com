@@ -15,4 +15,4 @@
       = link_to('B!', "https://b.hatena.ne.jp/entry/s/youcune.com#{current_page.url}", class: 'btn btn-hatena btn-xs', target: '_blank')
       = link_to(icon('fab', 'facebook-square', 'シェア'), "https://www.facebook.com/sharer/sharer.php?u=https://youcune.com#{current_page.url}", class: 'btn btn-facebook btn-xs', target: '_blank')
   %aside
-    = partial 'layouts/article-cards', locals: { articles: blog.articles[0...5] }
+    = partial 'layouts/articles-cards', locals: { articles: blog.articles[0...5] }
