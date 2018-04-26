@@ -2,8 +2,11 @@
   %article
     %header
       %h1= current_page.title
-      %p
+      %p.meta
         %time= icon('fal', 'clock', current_page.date.strftime('%Y/%m/%d'))
+        = icon('fal', 'tag')
+        - current_page.tags.each do |tag|
+          = link_to(tag, tag_path(tag))
       - if current_page.data.image.present?
         = image_tag current_page.data.image, alt: ''
     = yield
@@ -11,3 +14,5 @@
       = link_to(icon('fab', 'twitter', 'ツイート'), "https://twitter.com/share?#{ { url: "https://youcune.com#{current_page.url}", via: 'youcune', text: current_page.title }.to_query }", class: 'btn btn-twitter btn-xs', target: '_blank')
       = link_to('B!', "https://b.hatena.ne.jp/entry/s/youcune.com#{current_page.url}", class: 'btn btn-hatena btn-xs', target: '_blank')
       = link_to(icon('fab', 'facebook-square', 'シェア'), "https://www.facebook.com/sharer/sharer.php?u=https://youcune.com#{current_page.url}", class: 'btn btn-facebook btn-xs', target: '_blank')
+  %aside
+    = partial 'layouts/article-cards', locals: { articles: blog.articles[0...5] }

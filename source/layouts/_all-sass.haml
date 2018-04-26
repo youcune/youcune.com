@@ -118,7 +118,19 @@
     &:focus, &:hover, &:active
       text-decoration: underline
 
-  time
+  .meta
     color: $gray-500
     font-size: $font-size-sm
 
+    time
+      margin-right: 0.5rem
+
+  .list-inline
+    padding-left: 0
+    list-style: none
+
+    > li
+      display: inline-block
+
+      &:not(:last-child)
+        margin-right: 0.5rem

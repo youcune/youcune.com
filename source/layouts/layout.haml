@@ -10,7 +10,7 @@
       ga('send', 'pageview');
     %meta{charset: 'utf-8'}
     %meta{content: 'width=device-width, initial-scale=1', name: 'viewport'}
-    = render_partial 'layouts/all-sass'
+    = partial 'layouts/all-sass'
     = javascript_include_tag '//pro.fontawesome.com/releases/v5.0.10/js/light.js', '//pro.fontawesome.com/releases/v5.0.10/js/brands.js', '//pro.fontawesome.com/releases/v5.0.10/js/fontawesome.js', defer: true, crossorigin: 'anonymous'
     %title
       #{current_article.title + '｜' unless current_article.nil?}youcune.com
@@ -22,18 +22,5 @@
         %p <a href="https://youcube.jp/">合同会社ユーキューブ</a>代表。好きな言語は関西弁で好きなRubyのメソッドはObject#tapで好きなブキはN-ZAP89で好きな二次元キャラクターは<a href="https://yurie.sexy/">ゆりえちゃん</a>です。
       %main
         = yield
-      %aside
-        %h2 最新記事
-        %ul
-          - blog.articles[0...10].each do |article|
-            %li= link_to("#{article.date.strftime('%Y/%m/%d')} #{article.title}", article)
-        %h2 タグ
-        %ul
-          - blog.tags.each do |tag, articles|
-            %li= link_to "#{tag} (#{articles.size})", tag_path(tag)
-        %h2 アーカイブ
-        %ul
-          - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
-            %li= link_to "#{year} (#{articles.size})", blog_year_path(year)
       %footer
         = link_to(icon('fab', 'twitter', '@youcune', style: 'color: #55acee;'), 'https://twitter.com/youcune')

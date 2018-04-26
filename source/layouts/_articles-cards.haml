@@ -1,5 +1,5 @@
 .card-columns
-  - page_articles.each_with_index do |article, i|
+  - articles.each_with_index do |article, i|
     = link_to article do
       .card
         - if article.data.image.present?
@@ -7,5 +7,20 @@
         .card-body
           %h2.card-title= article.title
           %p.card-text= article.summary(50)
-          %p.card-text
+          %p.meta.card-text
             %time= icon('fal', 'clock', article.date.strftime('%Y/%m/%d'))
+            = icon('fal', 'tag')
+            - article.tags.each do |tag|
+              = tag
+  .card
+    .card-body
+      %h2.card-title タグ
+      %ul.list-inline.card-text
+        - blog.tags.each do |tag, articles|
+          %li= link_to "#{tag} (#{articles.size})", tag_path(tag)
+  .card
+    .card-body
+      %h2.card-title アーカイブ
+      %ul.list-inline.card-text
+        - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+          %li= link_to "#{year} (#{articles.size})", blog_year_path(year)
