@@ -38,7 +38,7 @@ activate :blog do |blog|
   blog.default_extension = ".md"
 
   blog.tag_template = "tag.html"
-  blog.calendar_template = "calendar.html"
+  blog.year_template = "calendar.html"
 
   # Enable pagination
   # blog.paginate = true
@@ -75,4 +75,8 @@ configure :build do
   activate :minify_html
   activate :asset_hash
   activate :gzip
+end
+
+after_build do
+  File.rename 'build/redirects', 'build/_redirects'
 end
