@@ -1,7 +1,7 @@
 ---
 title: 起業するより難しい、結婚する『決断力』
 image: 2017/1222-wedding.jpg
-tags: recommended
+tags: Recommended, Diary
 ---
 3年ちょっと前、ぼくは起業して会社を作った。そしたら、もう本当に、今まで何回繰り返されたかわからないほど繰り返されてきた友人との会話がこれ。
 

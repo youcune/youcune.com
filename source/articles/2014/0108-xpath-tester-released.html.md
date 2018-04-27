@@ -1,7 +1,6 @@
 ---
 title: XPathのテストツールつくりました
-date: 2014-01-08
-tags: Tech,XML,XPath
+tags: XPath,Release,Info
 description: XPathのテストツールをGithubに公開したので紹介します
 ---
 

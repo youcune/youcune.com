@@ -1,7 +1,7 @@
 ---
 title: ブログを引っ越します
 image: 2018/0424-moving.jpg
-tags: information
+tags: Info
 ---
 ## はてなブログから引っ越しを決意
 
