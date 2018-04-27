@@ -80,3 +80,7 @@ end
 after_build do
   File.rename 'build/redirects', 'build/_redirects'
 end
+
+# 警告を抑止
+# https://github.com/middleman/middleman/issues/2087#issuecomment-307502952
+Haml::TempleEngine.disable_option_validator!
