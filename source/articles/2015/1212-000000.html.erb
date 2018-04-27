@@ -1,0 +1,104 @@
+---
+title: 我々はおうちハックに何を求めているのか
+tags: ouch-hack
+---
+<p>若干釣り気味のタイトルにしてしまいました。反省はしていない。(๑•̀ㅁ•́๑)✧</p>
+
+<p>この記事は<a href="http://qiita.com/advent-calendar/2015/ouch-hack">おうちハックAdvent Calendar 2015</a>の12日目の記事です。</p>
+
+<h3>家電は人間の指示に従順すぎた</h3>
+
+<p>私は、エアコンをONにしたまま外出してしまい、帰ってきたら「あーやってしまった！」となることがよくあります。多くの場合、外出していたらエアコンがONである必要はありません。</p>
+
+<p>一方、朝、布団から出るのがつらい時期になってきました。寒い日には部屋が暖かい状態で目覚められればいいのに、と思ったりもします。</p>
+
+<p>つまり、確かにエアコンをONにはしたが、やっぱりOFFが良かったということもあり、逆に、ONにしてはいなかったものの、ONになっていてほしかったと思うことがあります。つまり、「ON/OFFの操作」と「実際にONになっていてほしかったか？」は完全に独立していることになります。20世紀に生み出された家電の延長線上にある現代の家電たちは、人間の指示に従順すぎたのです。</p>
+
+<h3>家電自身に判断させるのが正しい</h3>
+
+<p>家電の操作にはよくリモコンが使われます。しかし、そもそもエアコンを動作させるとき、「暖房21度にセットしたい」と思ってエアコンの電源を入れるのではありません。「寒さを感じないようにしたい」という目的で電源を入れているはずです。</p>
+
+<p>もっと言うと、暑いか寒いかは機械的に判断できることであり、ここに人間の意思を介在させる必要はありません。したがって、「エアコン側でON/OFFすべきかどうかを判断すべきではないか？」という発想になってきます。</p>
+
+<p>ただ、在宅していないのに、</p>
+
+<p>エアコン「部屋が寒いから部屋暖めといたっスよー」</p>
+
+<p>とかは困ります。「部屋が」寒い、のように、「部屋」を主語にして判断して動くのはよくありません。</p>
+
+<h3>あるべき姿は「僕が主語」</h3>
+
+<p>そこで、主語を「僕」と考えることにします。たとえば、私が「寝る」ということをすると、各家電においては次のように自分で判断して動作すべきです。</p>
+
+<ul>
+<li>エアコン：OFFにする。明日の天気予報を調べて、最低気温が一定以下、または、一定以上なら適温になるようタイマーをセットする（一定時間後にONにせず、寝る時点でタイマーをONにするのは、リモコンの電波を受信したらエアコンから音が鳴るからです）。</li>
+<li>照明：OFFにする</li>
+<li>家の鍵：施錠する</li>
+</ul>
+
+
+<p>「外出する」場合は次のような感じでしょうか。</p>
+
+<ul>
+<li>エアコン：OFFにする</li>
+<li>照明：OFFにする</li>
+<li>家の鍵：施錠する</li>
+<li>ルンバ：過去24時間起動していなかったら掃除を始める</li>
+</ul>
+
+
+<p>いずれも「家電に動いてもらうためにどう操作するか」ではなく「僕がどう動くかを知って、家電はどうすればよいか自分で判断してね」という「僕が主語」の思想になります。</p>
+
+<h3>Webから「僕が何するか」指示するボタンを作ってみた</h3>
+
+<p>作ってみました。</p>
+
+<p><span itemscope itemtype="http://schema.org/Photograph"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/y/youcune/20151210/20151210222214.jpg" alt="f:id:youcune:20151210222214j:plain" title="f:id:youcune:20151210222214j:plain" class="hatena-fotolife" itemprop="image"></span></p>
+
+<p>こんな感じで動いています。</p>
+
+<ul>
+<li>Raspberry Pi上でSinatraを動かす</li>
+<li>すべての家電を操作できるようにする</li>
+<li>エアコン、ルンバはIRKit経由（私の環境では、ルンバのリモコンは少し長押ししないと学習できませんでした）</li>
+<li>照明はHueを直接操作する</li>
+</ul>
+
+
+<p>たとえばおやすみボタンはこんな感じで実装されています。</p>
+
+<pre class="code lang-ruby" data-lang="ruby" data-unlink>post <span class="synSpecial">'</span><span class="synConstant">/oyasumi</span><span class="synSpecial">'</span> <span class="synStatement">do</span>
+  <span class="synType">HueService</span>.off!
+
+  <span class="synComment"># </span><span class="synTodo">TODO</span><span class="synComment"> 起きる時刻をカレンダーから予定を読み取って判断するようにしたい</span>
+  <span class="synStatement">if</span> <span class="synType">WeatherService</span>.cold_tomorrow?
+    <span class="synType">AirConService</span>.heat_after_5_hours!
+  <span class="synStatement">elsif</span> <span class="synType">WeatherService</span>.hot_tomorrow?
+    <span class="synType">AirConService</span>.cold_after_5_hours!
+  <span class="synStatement">else</span>
+    <span class="synType">AirConService</span>.off!
+  <span class="synStatement">end</span>
+
+  json(<span class="synConstant">status</span>: <span class="synSpecial">'</span><span class="synConstant">OK</span><span class="synSpecial">'</span>, <span class="synConstant">message</span>: <span class="synSpecial">'</span><span class="synConstant">おつかれさまでした！</span><span class="synSpecial">'</span>)
+<span class="synStatement">end</span>
+</pre>
+
+
+<p>ぜんぜん使い回しが効かなさそうですが、すべて<a href="https://github.com/youcune/home-buttons">GitHubで公開</a>しています。</p>
+
+<h3>今後の展望</h3>
+
+<ul>
+<li>カレンダーの予定を確認して起きる時刻を予測し、エアコンや照明の時刻を変える</li>
+<li>家の鍵をHTTPリクエストで開閉する仕組みがほしい</li>
+<li>位置情報に連動して自動化させたい（ボタンを押す必要がないようにしたい）</li>
+</ul>
+
+
+<h3>すべての家電が HomeKit に対応するのが理想</h3>
+
+<p>この思想にかなり近いのが <a href="http://www.apple.com/jp/ios/homekit/">HomeKit</a> でしょう。ただ、対応している家電が（とくに日本では）まだまだ限られています。</p>
+
+<p>おうちハックの記事を書いてる人はだいたいHueを使っているようですが、最近出た<a href="http://linksgrow.com/philips-hue-2-0-siri-and-apple-home-ki/">Hue Bridge 2.0 は HomeKit 対応</a>のようです。技適マークがないと思うので日本では使うと違法ですが、仮に技適マークさえあれば電源も電球の規格（E26）もOKだし、アプリも日本語対応しているのでHomeKitでSiriに日本語で指示でき、普通に使えそうですね。</p>
+
+<p>来年はHomeKitにすべて寄せられることを願っています。</p>
