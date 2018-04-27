@@ -2,8 +2,8 @@
 layout: false
 ---
 # stack.overflow.engineer -> youcune.com
-http://stack.overflow.engineer/* https://youcune.com/ 301!
-https://stack.overflow.engineer/* https://youcune.com/ 301!
+http://stack.overflow.engineer/* https://youcune.com/:splat 301!
+https://stack.overflow.engineer/* https://youcune.com/:splat 301!
 
 # /entry/ -> New URL
 /entry/2018/04/06/095707 /2018/04/06/095707/ 301
