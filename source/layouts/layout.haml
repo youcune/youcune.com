@@ -1,3 +1,7 @@
+:ruby
+  title = "#{current_page.data.title + '｜' if current_page.data.title.present?}youcune.com"
+  url = "https://youcune.com#{current_page.url}"
+  image = "https://youcune.com#{image_path(current_page.data.image.present? ? current_page.data.image : 'youcune.jpg')}"
 !!!
 %html
   %head
@@ -11,10 +15,15 @@
     %meta{ charset: 'utf-8' }
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1' }
     %meta{ name: 'author', content: 'https://google.me/+YuNakanishi' }
+    %meta{ property: 'og:title', content: title }
+    %meta{ property: 'og:type', content: 'website' }
+    %meta{ property: 'og:url', content: url }
+    %meta{ property: 'og:image', content: image }
+    %meta{ name: 'twitter:card', content: 'summary_large_image' }
+    %meta{ name: 'twitter:site', content: '@youcune' }
     = partial 'layouts/all-sass'
     = javascript_include_tag '//pro.fontawesome.com/releases/v5.0.10/js/light.js', '//pro.fontawesome.com/releases/v5.0.10/js/brands.js', '//pro.fontawesome.com/releases/v5.0.10/js/fontawesome.js', defer: true, crossorigin: 'anonymous'
-    %title
-      #{current_page.data.title + '｜' if current_page.data.title.present?}youcune.com
+    %title= title
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
   %body
     .container
