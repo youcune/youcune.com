@@ -23,6 +23,44 @@
   @import 'bootstrap/code'
   //@import 'bootstrap/grid'
   //@import 'bootstrap/tables'
+
+  //
+  // Basic Bootstrap table
+  //
+
+  table
+    width: 100%
+    max-width: 100%
+    margin-bottom: $spacer
+    background-color: $table-bg // Reset for nesting within parents with `background-color`.
+    border: $table-border-width solid $table-border-color
+    border-collapse: collapse
+
+    th, td
+      padding: $table-cell-padding
+      vertical-align: top
+      border-top: $table-border-width solid $table-border-color
+      border: $table-border-width solid $table-border-color
+
+    thead
+      th
+        vertical-align: bottom
+        border-bottom: (2 * $table-border-width) solid $table-border-color
+
+      th, td
+        border-bottom-width: (2 * $table-border-width)
+
+    @include media-breakpoint-down(md)
+      display: block
+      width: 100%
+      overflow-x: auto
+      -webkit-overflow-scrolling: touch
+      -ms-overflow-style: -ms-autohiding-scrollbar // See https://github.com/twbs/bootstrap/pull/10057
+
+      // Prevent double border on horizontal scroll due to use of `display: block;`
+      > .table-bordered
+        border: 0
+
   //@import 'bootstrap/forms'
   @import 'bootstrap/buttons'
   //@import 'bootstrap/transitions'
