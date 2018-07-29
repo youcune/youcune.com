@@ -68,3 +68,4 @@ Macがあればさほど使わない気もしているのに、惰性で購入�
 - iPad 2
 - iPad mini 4
 - iPad Pro 10.5
+- iPad (2018)
