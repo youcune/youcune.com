@@ -3,7 +3,7 @@ title: 今まで使ってきたデジタルオーディオプレイヤーを思�
 tags: Diary
 ---
 
-Amazon.co.jp の購入履歴を見ていたら、10年前に [Creative NOMAD MuVo2 1.5GB](http://www.amazon.co.jp/exec/obidos/ASIN/B00013PB7S/youcune-22) を買っていて懐かしくなったので、これまで使ってきたデジタルオーディオプレイヤーを紹介したいと思います。
+Amazon.co.jp の購入履歴を見ていたら、10年前に [Creative NOMAD MuVo2 1.5GB](https://www.amazon.co.jp/exec/obidos/ASIN/B00013PB7S/youcune-22) を買っていて懐かしくなったので、これまで使ってきたデジタルオーディオプレイヤーを紹介したいと思います。
 
 僕は音楽あんまり興味ないんですが、デジタルオーディオプレイヤーには興味あるちょっと変わった子でした。画像は各サイトの利用規約に則り一部転載しています。転載元にはリンクしています。
 
@@ -15,9 +15,9 @@ Amazon.co.jp の購入履歴を見ていたら、10年前に [Creative NOMAD MuV
 
 ### Creative NOMAD MuVo2
 
-<p class="ad-right"><a href="http://www.amazon.co.jp/gp/product/B00013PB7S/ref=as_li_ss_il?ie=UTF8&camp=247&creative=7399&creativeASIN=B00013PB7S&linkCode=as2&tag=youcune-22"><img border="0" src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00013PB7S&Format=_SL110_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=youcune-22" ></a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=youcune-22&l=as2&o=9&a=B00013PB7S" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+<p class="ad-right"><a href="https://www.amazon.co.jp/gp/product/B00013PB7S/ref=as_li_ss_il?ie=UTF8&camp=247&creative=7399&creativeASIN=B00013PB7S&linkCode=as2&tag=youcune-22"><img border="0" src="https://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00013PB7S&Format=_SL110_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=youcune-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=youcune-22&l=as2&o=9&a=B00013PB7S" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; width:1px !important; height:1px !important" /></p>
 
-2004年4月29日 Amazon.co.jp で購入。高2の思い出を共有したプレイヤー。小型でありながらも1.5GBという大容量HDDを搭載。シャッフルとランダム再生が別で、ランダム再生は連続して同じ曲が選曲される場合もあるという仕様だった気がする。MP3のタグを読んでくれて日本語表示するなどなかなかの名機だった。これで <a href="http://www.amazon.co.jp/gp/product/4900790052/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=4900790052&linkCode=as2&tag=youcune-22">DUO 3.0</a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=youcune-22&l=as2&o=9&a=4900790052" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> のCDを聴きまくっていた覚えがあります。かなり気に入ってた。
+2004年4月29日 Amazon.co.jp で購入。高2の思い出を共有したプレイヤー。小型でありながらも1.5GBという大容量HDDを搭載。シャッフルとランダム再生が別で、ランダム再生は連続して同じ曲が選曲される場合もあるという仕様だった気がする。MP3のタグを読んでくれて日本語表示するなどなかなかの名機だった。これで <a href="https://www.amazon.co.jp/gp/product/4900790052/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=4900790052&linkCode=as2&tag=youcune-22">DUO 3.0</a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=youcune-22&l=as2&o=9&a=4900790052" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; width:1px !important; height:1px !important" /> のCDを聴きまくっていた覚えがあります。かなり気に入ってた。
 
 ### iriver U10
 
@@ -27,7 +27,7 @@ Amazon.co.jp の購入履歴を見ていたら、10年前に [Creative NOMAD MuV
 
 ### iriver T10
 
-<p class="ad-right"><a href="http://www.amazon.co.jp/gp/product/B0009VPFRI/ref=as_li_ss_il?ie=UTF8&camp=247&creative=7399&creativeASIN=B0009VPFRI&linkCode=as2&tag=youcune-22"><img border="0" src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0009VPFRI&Format=_SL110_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=youcune-22" ></a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=youcune-22&l=as2&o=9&a=B0009VPFRI" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p>
+<p class="ad-right"><a href="https://www.amazon.co.jp/gp/product/B0009VPFRI/ref=as_li_ss_il?ie=UTF8&camp=247&creative=7399&creativeASIN=B0009VPFRI&linkCode=as2&tag=youcune-22"><img border="0" src="https://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0009VPFRI&Format=_SL110_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=youcune-22" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=youcune-22&l=as2&o=9&a=B0009VPFRI" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important; width:1px !important; height:1px !important" /></p>
 
 iriver T10 はちょっと変わったデザインが好きでした。ジーンズにカラビナつけてたりしてちょっとイタい大学生だった記憶があります。 UI とかはあまり覚えていません。
 
