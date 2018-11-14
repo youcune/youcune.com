@@ -24,6 +24,8 @@ layout: page
 
 2017年8月、入籍し、同年12月に結婚式を挙げた。結婚式を挙げる前日に、結婚に至った経緯や心境を[自身のブログ](/articles/2017/1222-wedding-eve.html)につづっている。
 
+2018年12月、六甲アイランドに引っ越しを予定している。
+
 ## アップル製品の遍歴
 
 おそらく人並み以上にアップル製品を購入しているので、歴史をまとめておく。
@@ -37,8 +39,7 @@ layout: page
 - iMac Mid 2011（MacBook Airと併用していた）
 - MacBook Pro Late 2013
 - MacBook Pro MacBook Pro (13-inch, Late 2016, Four Thunderbolt 3 Ports)
-
-最近肩こりを患っているので、1kgを切るMacBookに興味がある。肩こりの悪化で落ちる生産性と、パワー不足で落ちる生産性では前者のほうが顕著と考えている（要出典）。
+- MacBook Air (Retina, 13-inch, 2018)
 
 ### iPhone
 
@@ -57,6 +58,7 @@ iPhone 3GのときからiPhoneを利用し続けている。4.0インチ以下�
 - iPhone 6s（長期間使っていたら慣れるだろうと思って再挑戦）
 - iPhone SE 16GB（半年ぐらい使ってもやはり慣れないので、発売日に注文）
 - iPhone SE 32GB（容量が足りなくなってきたので買い替え）
+- iPhone SE 128GB（iPhone SEが販売終了になる予感がして買っておいた）
 
 iPhone SE2待ち。本人は「4.0インチモデルがでなくなったらiPhone使うのを辞める」と豪語している（要出典）。
 
@@ -69,3 +71,9 @@ Macがあればさほど使わない気もしているのに、惰性で購入�
 - iPad mini 4
 - iPad Pro 10.5
 - iPad (2018)
+
+### Apple Watch
+
+- Apple Watch Sport
+- Apple Watch Series 2
+- Apple Watch Series 4

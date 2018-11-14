@@ -64,6 +64,10 @@ helpers do
     html << ' ' << text.to_s unless text.blank?
     html
   end
+
+  def amazon_link_tag(label, asin, *args)
+    link_to label, "https://www.amazon.co.jp/dp/#{asin}?tag=youcune-22", *args
+  end
 end
 
 activate :directory_indexes
