@@ -11,11 +11,21 @@
         = image_tag current_page.data.image, alt: ''
     = yield
     %footer
-      %p この記事が気に入ったら<a href="https://kyash.co/" target="_blank">Kyash</a>投げ銭かシェアのご検討をお願いします。スマホの方はQRコードをタップするとKyashアプリが開きます。<br>
-      %p= link_to(image_tag('kyash.png', style: 'width: 150px; height: 150px;'), 'kyash://qr/u/2985391394517134633')
-      %p
-        = link_to(icon('fab', 'twitter', 'ツイート'), "https://twitter.com/share?#{ { url: "https://youcune.com#{current_page.url}", via: 'youcune', text: current_page.title }.to_query }", class: 'btn btn-twitter btn-xs', target: '_blank')
-        = link_to('B!', "https://b.hatena.ne.jp/entry/s/youcune.com#{current_page.url}", class: 'btn btn-hatena btn-xs', target: '_blank')
-        = link_to(icon('fab', 'facebook-square', 'シェア'), "https://www.facebook.com/sharer/sharer.php?u=https://youcune.com#{current_page.url}", class: 'btn btn-facebook btn-xs', target: '_blank')
+      %p この記事が気に入ったら<a href="https://paypay.ne.jp/" target="_blank">PayPay</a>か<a href="https://kyash.co/" target="_blank">Kyash</a>で投げ銭やシェアのご検討をお願いします。<br>
+      .row
+        .col-md-2
+          %h3 PayPay
+          %p スマホの方はQRコードの画像を一度保存して、アプリから読み込んでください。
+          %p= image_tag('paypay.png', style: 'width: 150px; height: 150px;')
+        .col-md-2
+          %h3 Kyash
+          %p <a href="https://kyash.co/" target="_blank">Kyash</a>アプリをインストールして、QRコードをタップしてください。
+          %p= link_to(image_tag('kyash.png', style: 'width: 150px; height: 150px;'), 'kyash://qr/u/2985391394517134633')
+        .col-md-2
+          %h3 シェア
+          %p
+            = link_to(icon('fab', 'twitter', 'ツイート'), "https://twitter.com/share?#{ { url: "https://youcune.com#{current_page.url}", via: 'youcune', text: current_page.title }.to_query }", class: 'btn btn-twitter btn-xs', target: '_blank')
+            = link_to('B!', "https://b.hatena.ne.jp/entry/s/youcune.com#{current_page.url}", class: 'btn btn-hatena btn-xs', target: '_blank')
+            = link_to(icon('fab', 'facebook-square', 'シェア'), "https://www.facebook.com/sharer/sharer.php?u=https://youcune.com#{current_page.url}", class: 'btn btn-facebook btn-xs', target: '_blank')
   %aside
     = partial 'layouts/articles-cards', locals: { articles: blog.articles[0...5] }

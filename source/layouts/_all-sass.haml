@@ -7,6 +7,11 @@
   $font-family-serif: Georgia,游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN",HGS明朝E,serif
   $spacer-lg: 4rem
 
+  // ライトなGrid
+  $grid-breakpoints: (sm: 0, md: 768px)
+  $container-max-widths: (sm: 540px, md: 720px)
+  $grid-columns: 6
+
   @import 'bootstrap/functions'
   @import 'bootstrap/variables'
 
@@ -21,7 +26,7 @@
   //@import 'bootstrap/type'
   //@import 'bootstrap/images'
   @import 'bootstrap/code'
-  //@import 'bootstrap/grid'
+  @import 'bootstrap/grid'
   //@import 'bootstrap/tables'
 
   //
@@ -188,3 +193,13 @@
 
     &:not(:last-child)
       margin-right: $list-inline-padding
+
+  // -----------------------------------------------------------------
+  // Cards
+  // -----------------------------------------------------------------
+  .card-columns
+    @include media-breakpoint-down(sm)
+      column-count: 1
+
+    @include media-breakpoint-only(md)
+      column-count: 3

@@ -1,17 +1,11 @@
-# If you do not have OpenSSL installed, change
-# the following line to use 'http://'
 source 'https://rubygems.org'
 
-gem 'middleman', '~> 4.3.0.rc.1'
+gem 'middleman', '~> 4.3.3'
 gem 'middleman-blog'
 gem 'middleman-minify-html'
+gem 'middleman-sprockets'
 
-gem 'bootstrap'
+gem 'bootstrap', '~> 4.1.3'
 gem 'redcarpet'
 gem 'builder'
-gem 'therubyracer'
 gem 'nokogiri'
-
-# この問題が解決されるまでバージョン固定
-# https://github.com/middleman/middleman/issues/2126
-gem 'contracts', '0.14.0'
