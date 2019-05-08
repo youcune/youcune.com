@@ -28,6 +28,20 @@ layout: page
 
 Ruby on Rails などのプログラミング技術も持っているものの、現在は顧問契約のない顧客に対して単発の開発案件は受けていない。
 
+## 活動
+
+- [Kobe.rb](https://koberb.doorkeeper.jp/) 共同運営
+- [Rails Follow-up Kobe](https://rails-follow-up-kobe.doorkeeper.jp/) 共同運営
+- [RailsGirls Kobe](https://railsgirls-kobe.doorkeeper.jp/) コーチ皆勤
+- [テックアカデミー](https://techacademy.jp/) メンター経験あり（3ヶ月だけ）
+
+## SNS
+
+- Twitter: [@youcune](https://twitter.com/youcune)
+- GitHub: [@youcune](https://github.com/youcune)
+- Qiita: [@youcune](https://qiita.com/youcune)
+- E-mail: [you@nakanishi.email](mailto:you@nakanishi.email)
+
 ## 好きな……
 
 - 言語：関西弁、Ruby
