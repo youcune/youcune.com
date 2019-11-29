@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'middleman', '~> 4.3.3'
+gem 'middleman', '~> 4.3.5'
 gem 'middleman-blog'
 gem 'middleman-minify-html'
 gem 'middleman-sprockets'

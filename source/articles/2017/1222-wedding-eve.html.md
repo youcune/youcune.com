@@ -19,9 +19,9 @@ tags: Recommended, Diary
 
 1つめは本。
 
-<div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4478066116/stack-overflow-engineer-22/"><img src="https://images-fe.ssl-images-amazon.com/images/I/519tuiAlyOL._SL160_.jpg" class="hatena-asin-detail-image" alt="幸せになる勇気――自己啓発の源流「アドラー」の教えII" title="幸せになる勇気――自己啓発の源流「アドラー」の教えII"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4478066116/stack-overflow-engineer-22/">幸せになる勇気――自己啓発の源流「アドラー」の教えII</a></p><ul><li><span class="hatena-asin-detail-label">作者:</span> 岸見一郎,古賀史健</li><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> ダイヤモンド社</li><li><span class="hatena-asin-detail-label">発売日:</span> 2016/02/26</li><li><span class="hatena-asin-detail-label">メディア:</span> 単行本（ソフトカバー）</li><li><a href="http://d.hatena.ne.jp/asin/4478066116/stack-overflow-engineer-22" target="_blank">この商品を含むブログ (28件) を見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div>
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=youcune-22&m=amazon&o=9&p=8&l=as1&IS2=1&detail=1&asins=4478066116&linkId=5fa654bac232d0d346c7973b9efb6222&bc1=000000&lt1=_blank&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"></iframe>
 
-この本は、<a href="http://d.hatena.ne.jp/asin/4478025819/stack-overflow-engineer-22">嫌われる勇気―――自己啓発の源流「アドラー」の教え</a>の続編。対話形式なのでいい感じに引用が難しいのでぼくの理解した要約をしておく（この結論に至るまでに、「嫌われる勇気」と「幸せになる勇気」の8割ぐらいの合計1.8冊分の議論がベースになって導き出された結論なので、興味のある方はぜひ2冊セットで手に取ってみてほしい）。
+この本は、<a href="http://d.hatena.ne.jp/asin/4478025819/youcune-22" target="_blank">嫌われる勇気―――自己啓発の源流「アドラー」の教え</a>の続編。対話形式なのでいい感じに引用が難しいのでぼくの理解した要約をしておく（この結論に至るまでに、「嫌われる勇気」と「幸せになる勇気」の8割ぐらいの合計1.8冊分の議論がベースになって導き出された結論なので、興味のある方はぜひ2冊セットで手に取ってみてほしい）。
 
 - 「運命の人」なんていない
   - 異性と関係を深めようと思えば、声をかけたり勇気が求められる
