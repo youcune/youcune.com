@@ -1,5 +1,5 @@
 :ruby
-  title = "#{current_page.data.title + '｜' if current_page.data.title.present?}youcune.com"
+  title = current_page.data.title.present? ? "#{current_page.data.title}｜youcune.com" : 'なかにしゆうオフィシャルサイト youcune.com'
   url = "https://youcune.com#{current_page.url}"
   image = "https://youcune.com#{image_path(current_page.data.image.present? ? current_page.data.image : 'youcune.jpg')}"
 !!!
