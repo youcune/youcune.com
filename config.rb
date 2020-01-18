@@ -82,9 +82,7 @@ configure :build do
 end
 
 after_build do
-  File.rename 'build/redirects', 'build/_redirects'
+  Dir.glob('build/images/**/*.*').each do |file|
+    system("echo '#{file}: '; cwebp -short #{file} -o #{file}.webp")
+  end
 end
-
-# 警告を抑止
-# https://github.com/middleman/middleman/issues/2087#issuecomment-307502952
-Haml::TempleEngine.disable_option_validator!
