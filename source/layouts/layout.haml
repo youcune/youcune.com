@@ -23,7 +23,7 @@
     %meta{ name: 'twitter:site', content: '@youcune' }
     %title= title
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
-    = javascript_include_tag '//pro.fontawesome.com/releases/v5.0.10/js/light.js', '//pro.fontawesome.com/releases/v5.0.10/js/brands.js', '//pro.fontawesome.com/releases/v5.0.10/js/fontawesome.js', defer: true, crossorigin: 'anonymous'
+    <script src="https://kit.fontawesome.com/26820ecab1.js" crossorigin="anonymous" defer></script>
     = partial 'layouts/all-sass'
   %body
     .container

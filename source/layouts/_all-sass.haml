@@ -127,6 +127,9 @@
   img
     vertical-align: middle
 
+  pre, code, kbd
+    font-family: $font-family-monospace
+
   // -----------------------------------------------------------------
   // Layout
   // -----------------------------------------------------------------
@@ -164,7 +167,9 @@
         margin-top: 0
 
     > footer
-      margin-top: $spacer-lg
+      margin-top: $spacer-lg/2
+      hr
+        margin-bottom: $spacer-lg/2
 
   // -----------------------------------------------------------------
   // Type
