@@ -2,6 +2,7 @@
   title = current_page.data.title.present? ? "#{current_page.data.title}｜youcune.com" : 'なかにしゆうオフィシャルサイト youcune.com'
   url = "https://youcune.com#{current_page.url}"
   image = "https://youcune.com#{image_path(current_page.data.image.present? ? current_page.data.image : 'youcune.jpg')}"
+  ogp_image = current_page.data.ogp_image.present? ? "https://youcune.com#{image_path(current_page.data.ogp_image)}" : image
 !!!
 %html
   %head
@@ -14,11 +15,10 @@
       ga('send', 'pageview');
     %meta{ charset: 'utf-8' }
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1' }
-    %meta{ name: 'author', content: 'https://google.me/+YuNakanishi' }
     %meta{ property: 'og:title', content: title }
     %meta{ property: 'og:type', content: 'website' }
     %meta{ property: 'og:url', content: url }
-    %meta{ property: 'og:image', content: image }
+    %meta{ property: 'og:image', content: ogp_image }
     %meta{ name: 'twitter:card', content: 'summary_large_image' }
     %meta{ name: 'twitter:site', content: '@youcune' }
     %title= title

@@ -1,6 +1,7 @@
 ---
 title: ネットに蔓延る悪意をなくすためにマイナンバーを使ってはどうか
 image: 2020/0524-bleeding-heart.svg
+ogp_image: 2020/0524-bleeding-heart-ogp.png
 tags: Thought
 ---
 
