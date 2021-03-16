@@ -100,3 +100,13 @@ after_build do
     system("echo '#{file}: '; cwebp -short #{file} -o #{file}.webp")
   end
 end
+
+class YoucuneRenderer < Redcarpet::Render::HTML
+  def image(link, title, alt_text)
+    size = FastImage.size(File.join('source', 'images', link))
+    "<img src=\"/images/#{link}\" alt=\"#{alt_text}\" width=\"#{size[0]}\" height=\"#{size[1]}\">"
+  end
+end
+
+set :markdown_engine, :redcarpet
+set :markdown, renderer: YoucuneRenderer
