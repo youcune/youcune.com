@@ -1,3 +1,5 @@
+require 'fastimage'
+
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -15,6 +17,8 @@ page 'articles/20*', layout: :article
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
 #  which_fake_page: "Rendering a fake page with a local variable" }
+
+activate :pry
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
@@ -66,7 +70,17 @@ helpers do
   end
 
   def amazon_link_tag(label, asin, *args)
-    link_to label, "https://www.amazon.co.jp/dp/#{asin}?tag=youcune-22", *args
+    link_to(label, "https://www.amazon.co.jp/dp/#{asin}?tag=youcune-22", *args)
+  end
+
+  def image_tag_with_size(source, options)
+    size = FastImage.size(File.join('source', 'images', source))
+
+    if size.present?
+      options.merge!(width: size[0], height: size[1])
+    end
+
+    image_tag(source, options)
   end
 end
 
