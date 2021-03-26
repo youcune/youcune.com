@@ -8,6 +8,8 @@
   %head
     %meta{ charset: 'utf-8' }
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1' }
+    - if current_page.data.description.present?
+      %meta{ name: 'description', content: current_page.data.description }
     %meta{ property: 'og:title', content: title }
     %meta{ property: 'og:type', content: 'website' }
     %meta{ property: 'og:url', content: url }

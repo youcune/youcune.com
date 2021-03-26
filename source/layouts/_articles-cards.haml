@@ -22,13 +22,13 @@
               = icon('fal', 'tag', article.tags.join(', '))
   .card
     .card-body
-      %h2.card-title Tags
+      %h2.card-title= icon('fal', 'tags', 'Tags')
       %ul.list-inline.card-text
         - blog.tags.each do |tag, articles|
-          %li= link_to "#{tag} (#{articles.size})", tag_path(tag)
+          %li= link_to(icon('fal', 'tag', "#{tag} (#{articles.size})"), tag_path(tag), class: 'btn btn-outline-primary btn-xs')
   .card
     .card-body
-      %h2.card-title Archives
+      %h2.card-title= icon('fal', 'calendar-alt', 'Archives')
       %ul.list-inline.card-text
         - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
-          %li= link_to "#{year} (#{articles.size})", blog_year_path(year)
+          %li= link_to(icon('fal', 'calendar-day', "#{year} (#{articles.size})"), blog_year_path(year), class: 'btn btn-outline-primary btn-xs')

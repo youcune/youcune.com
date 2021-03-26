@@ -6,7 +6,7 @@
         %time= icon('fal', 'clock', current_page.date.strftime('%Y/%m/%d'))
         - if current_page.tags.any?
           - current_page.tags.each do |tag|
-            = link_to(icon('fal', 'tag', tag), tag_path(tag), class: 'btn btn-primary btn-xs')
+            = link_to(icon('fal', 'tag', tag), tag_path(tag), class: 'btn btn-outline-primary btn-xs')
       - if current_page.data.image.present?
         = image_tag_with_size current_page.data.image, alt: ''
     = yield
