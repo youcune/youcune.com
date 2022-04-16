@@ -18,8 +18,6 @@ page 'articles/20*', layout: :article
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
-activate :pry
-
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
@@ -110,3 +108,7 @@ end
 
 set :markdown_engine, :redcarpet
 set :markdown, renderer: YoucuneRenderer
+
+# 暫定対応
+# @see https://github.com/middleman/middleman/issues/2113
+Haml::TempleEngine.disable_option_validator!

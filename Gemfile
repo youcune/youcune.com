@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'middleman'
-gem 'middleman-pry'
 gem 'middleman-blog'
 gem 'middleman-minify-html'
 

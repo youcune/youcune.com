@@ -18,7 +18,7 @@ layout: page
 
 2014年10月、[合同会社ユーキューブ](https://youcube.jp/)を設立。
 
-2017年8月、入籍し、同年12月に結婚式を挙げた。結婚式を挙げる前日に、結婚に至った経緯や心境を[自身のブログ](/articles/2017/1222-wedding-eve.html)につづっている。
+2017年8月、入籍し、同年12月に結婚式を挙げた。結婚式を挙げる前日に、結婚に至った経緯や心境を[自身のブログ](/2017/12/22/wedding-eve/)につづっている。
 
 2018年12月、神戸市東灘区にマイホームを購入。
 
@@ -26,30 +26,27 @@ layout: page
 
 ## 仕事
 
-「神戸周辺のエンジニアを増やす」ことを目指しており、Ruby on Railsを中心としたWebアプリケーション開発支援を行っている。
+[合同会社ユーキューブ](https://youcube.jp/)を経営。「神戸周辺のエンジニアを増やす」ことを目指しており、Ruby on Railsを中心としたWebアプリケーション開発支援を行っている。
 
 ## 活動
 
 - [Kobe.rb](https://koberb.doorkeeper.jp/) 共同運営
 - [Rails Follow-up Kobe](https://rails-follow-up-kobe.doorkeeper.jp/) 共同運営
 - [RailsGirls Kobe](https://railsgirls-kobe.doorkeeper.jp/) コーチ皆勤
-- [テックアカデミー](https://techacademy.jp/) メンター経験あり（3ヶ月だけ）
 
 ## SNS
 
 - Twitter: [@youcune](https://twitter.com/youcune)
 - GitHub: [@youcune](https://github.com/youcune)
-- Qiita: [@youcune](https://qiita.com/youcune)
-- E-mail: [you@nakanishi.email](mailto:you@nakanishi.email)
 
 ## 好きな……
 
 - 言語：関西弁
 - 関西弁：知らんけど
 - Rubyのメソッド： `Object#tap`
-- ブキ：プライムシューターベッチュー
-- ブランド：アップル、無印良品
-- アップル製品：iMac 2020
-- 無印良品製品：[肩の負担を軽くする　撥水　リュックサック](https://www.muji.com/jp/ja/store/cmdty/detail/4550344420355)
+- ブキ：N-ZAP85
+- アップル製品：iPhone SE（第1世代）
+- 無印良品製品：スタッキングシェルフ
+- クレジットカード：
 - カメラ：PENTAX
-- 焦点距離：31mm
+- 焦点距離：35mmあたり
