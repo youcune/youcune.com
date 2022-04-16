@@ -93,11 +93,12 @@ configure :build do
   activate :gzip
 end
 
-after_build do
-  Dir.glob('build/images/**/*.*').each do |file|
-    system("echo '#{file}: '; cwebp -short #{file} -o #{file}.webp")
-  end
-end
+# GitHub Pagesではユーザーの環境によって画像の出し分けができなさそうなのでいったんコメントアウト
+# after_build do
+#   Dir.glob('build/images/**/*.*').each do |file|
+#     system("echo '#{file}: '; cwebp -short #{file} -o #{file}.webp")
+#   end
+# end
 
 class YoucuneRenderer < Redcarpet::Render::HTML
   def image(link, title, alt_text)
