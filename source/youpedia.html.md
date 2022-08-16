@@ -1,6 +1,7 @@
 ---
 title: なかにしゆうペディア
 layout: page
+embed_email_address: true
 ---
 <strong>なかにしゆう</strong>（仲西 悠、1987年6月27日～）は、日本の実業家。
 
@@ -47,7 +48,7 @@ layout: page
 
 ## SNS・連絡先
 
-- E-mail: <span id="_embed_email_address">表示するにはJavaScriptを有効にしてください</span>
+- E-mail: <a id="embed_email_address" href="https://support.yahoo-net.jp/noscript">表示するにはJavaScriptを有効にしてください</a>
 - Twitter: [@youcune](https://twitter.com/youcune)
 - GitHub: [@youcune](https://github.com/youcune)
 - Qiita: [@youcune](https://qiita.com/youcune)
