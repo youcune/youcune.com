@@ -28,5 +28,11 @@
         = yield
       %footer
         %p <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja"><img alt="クリエイティブ・コモンズ・ライセンス" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" width="80" height="15" /></a>
-    <script async defer src="https://sa.youcune.com/latest.js"></script>
-    <noscript><img src="https://sa.youcune.com/noscript.gif" alt=""/></noscript>
+    :javascript
+      elm = document.getElementById('_embed_email_address');
+      if (elm !== null) {
+        encoded_email = 'you%40nakan%69sh%69%2eema%69l';
+        elm.innerHTML = '<a href="mailto:' + encoded_email + '">' + decodeURIComponent(encoded_email) + '</a>';
+      }
+    <script data-collect-dnt="true" async defer src="https://sa.youcune.com/latest.js"></script>
+    <noscript><img src="https://sa.youcune.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
