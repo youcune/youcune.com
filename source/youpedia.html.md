@@ -46,7 +46,7 @@ embed_email_address: true
 - [RailsGirls Kobe](https://railsgirls-kobe.doorkeeper.jp/) コーチ皆勤
 - [テックアカデミー](https://techacademy.jp/) メンター経験あり（3ヶ月だけ）
 
-## SNS・連絡先
+## 連絡先
 
 - E-mail: <a id="embed_email_address" href="https://support.yahoo-net.jp/noscript">表示するにはJavaScriptを有効にしてください</a>
 - Twitter: [@youcune](https://twitter.com/youcune)
