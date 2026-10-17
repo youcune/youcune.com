@@ -28,4 +28,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # 未指定だと古い v3 が入り wrangler.jsonc を読めない
+          wranglerVersion: "4"
           command: deploy
