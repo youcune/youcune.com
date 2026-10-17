@@ -111,11 +111,57 @@ configure :build do
   activate :asset_hash
 end
 
+# 縮小表示される画像向けに作る縮小版の幅
+RESPONSIVE_WIDTH = 400
+# ImageMagick 7 は magick、6（Ubuntu の apt 版）は convert
+IMAGEMAGICK = system('command -v magick > /dev/null') ? 'magick' : 'convert'
+
+# foo-abc123.jpg → foo-abc123-400w.jpg
+def responsive_variant_path(path)
+  path.sub(/(\.(?:jpe?g|png))\z/i, "-#{RESPONSIVE_WIDTH}w\\1")
+end
+
+# asset_hash でファイル名が確定した後の HTML に srcset / sizes を付ける
+def add_srcset(html)
+  html.gsub(/<img\b[^>]*>/) do |tag|
+    src = tag[/\ssrc="?(\/images\/[^"\s>]+\.(?:jpe?g|png))/i, 1]
+    next tag if src.nil? || tag.include?('srcset')
+
+    variant = responsive_variant_path(src)
+    next tag unless File.exist?(File.join('build', variant))
+
+    width, = FastImage.size(File.join('build', src))
+    # カードは3段組みで最大 400px 程度、記事中の画像は最大 800px
+    sizes = tag.include?('card-img-top') ? '(min-width: 1200px) 400px, (min-width: 800px) 33vw, 100vw' : '(min-width: 800px) 800px, 100vw'
+    tag.sub(/\s*\/?>\z/, %( srcset="#{variant} #{RESPONSIVE_WIDTH}w, #{src} #{width}w" sizes="#{sizes}">))
+  end
+end
+
 after_build do
   FileUtils.cp('_redirects', 'build/_redirects')
 
   Dir.glob('build/images/**/*.{jpg,png}').each do |file|
+    width, = FastImage.size(file)
+    next unless width && width > RESPONSIVE_WIDTH
+
+    variant = responsive_variant_path(file)
+    system(IMAGEMAGICK, file, '-resize', "#{RESPONSIVE_WIDTH}x", variant)
+    # パレット形式の PNG はフルカラーで書き出されて元より大きくなるので、256色で作り直す
+    if file.end_with?('.png') && File.size(variant) >= File.size(file)
+      system(IMAGEMAGICK, file, '-resize', "#{RESPONSIVE_WIDTH}x", '-colors', '256', "PNG8:#{variant}")
+    end
+    # それでも小さくならなければ縮小版は使わない（srcset も付かない）
+    File.delete(variant) if File.size(variant) >= File.size(file)
+  end
+
+  Dir.glob('build/images/**/*.{jpg,png}').each do |file|
     system("echo '#{file}: '; cwebp -short #{file} -o #{file}.webp")
+  end
+
+  Dir.glob('build/**/*.html').each do |file|
+    html = File.read(file)
+    rewritten = add_srcset(html)
+    File.write(file, rewritten) unless rewritten == html
   end
 end
 
