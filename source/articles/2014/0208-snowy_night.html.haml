@@ -1,0 +1,14 @@
+---
+title: 雪の降る夜にフラッシュ撮影すると面白い
+tags: Photos
+---
+
+%p んです。
+%h3 ポイント
+%ul
+  %li フラッシュをONにして
+  %li F値を小さくして
+  %li 望遠で撮る
+%h3 こんな写真が撮れます
+- (1..7).each do |i|
+  %p= link_to(image_tag_with_size("imports/20140208_#{i}s.jpg", alt: ''), image_path("imports/20140208_#{i}.jpg"))

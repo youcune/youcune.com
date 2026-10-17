@@ -1,0 +1,16 @@
+{
+  "name": "youcune-com",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./build",
+    "binding": "ASSETS",
+    // directory_indexes で生成される /foo/ → foo/index.html
+    "html_handling": "auto-trailing-slash",
+    // 画像のときだけ Worker を通して WebP を出し分ける（それ以外は静的配信で無料枠を消費しない）
+    "run_worker_first": ["/images/*"]
+  },
+  "routes": [
+    { "pattern": "youcune.com", "custom_domain": true }
+  ]
+}

@@ -1,0 +1,46 @@
+:ruby
+  if content_for?(:title)
+    # 変数を入れたいときに使う
+    title = "#{yield_content(:title)}｜youcune.com"
+  elsif current_page.data.title.present?
+    title = "#{current_page.data.title}｜youcune.com"
+  else
+    title = 'なかにしゆうオフィシャルサイト youcune.com'
+  end
+  url = "https://youcune.com#{current_page.url}"
+  image = "https://youcune.com#{image_path(current_page.data.image.present? ? current_page.data.image : 'youcune.jpg')}"
+  ogp_image = current_page.data.ogp_image.present? ? "https://youcune.com#{image_path(current_page.data.ogp_image)}" : image
+!!!
+%html{ lang: 'ja' }
+  %head
+    %meta{ charset: 'utf-8' }
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1' }
+    - if current_page.data.description.present?
+      %meta{ name: 'description', content: current_page.data.description }
+    %meta{ property: 'og:title', content: title }
+    %meta{ property: 'og:type', content: 'website' }
+    %meta{ property: 'og:url', content: url }
+    %meta{ property: 'og:image', content: ogp_image }
+    %meta{ name: 'twitter:card', content: 'summary_large_image' }
+    %meta{ name: 'twitter:site', content: '@youcune' }
+    %title= title
+    = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
+    %link{ rel: 'icon', href: image_path('favicon.png'), type: 'image/png', sizes: '256x256' }
+    %style
+      != inline_scss('assets/stylesheets/all.scss.erb')
+  %body
+    .container
+      %header
+        %h1= link_to 'youcune.com', '/'
+      %main
+        = yield
+      %footer
+        %p youcune.comではCookieを利用していません
+    - if current_page.data.embed_email_address.present?
+      :javascript
+        encoded = 'you%4' + '0nakan%69sh%69%2' + 'eema%69l';
+        elm = document.getElementById('embed_email_address');
+        elm.setAttribute('href', decodeURIComponent('ma%69lto%3a') + encoded);
+        elm.textContent = decodeURIComponent(encoded);
+    <script data-collect-dnt="true" async defer src="https://sa.youcune.com/latest.js"></script>
+    <noscript><img src="https://sa.youcune.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>

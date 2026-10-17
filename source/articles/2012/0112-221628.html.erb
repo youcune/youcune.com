@@ -1,0 +1,130 @@
+---
+title: Geolocation APIを用いた高精度な位置情報取得
+tags: JavaScript
+---
+<p><a href="http://d.hatena.ne.jp/toshifumi_tegu/20100322/1269257133">geolocationでの位置情報取得 - teguのTech Blog</a>で紹介されていたものと考え方は同じです。まあ要は、</p>
+
+<ol>
+    <li>navigator.geolocation.getCurrentPosition を使うと精度が低くても successCallback が呼ばれる</li>
+    <li>navigator.geolocation.watchPosition を使えばええやん</li>
+    <li>一定以上の精度にならないときは先に進めず止まってしまう</li>
+    <li>タイムアウトするようにしよう</li>
+</ol>
+
+
+<p>というお話です。タイムアウトの信頼性を向上させ、エラー処理もそこそこやってる気がする関数を作ってしまったので紹介します。</p>
+
+<pre class="code lang-javascript" data-lang="javascript" data-unlink><span class="synComment">// AccuratePosition</span>
+<span class="synComment">// 時間の許す限り正確な位置情報を取得する</span>
+<span class="synComment">// http://pear.jp/</span>
+
+<span class="synIdentifier">function</span> getAccuratePosition(successCallback, errorCallback, option)<span class="synIdentifier">{</span>
+    <span class="synComment">// 位置情報に対応していなければ終了</span>
+    <span class="synStatement">if</span>(!navigator.geolocation)<span class="synIdentifier">{</span>
+        <span class="synIdentifier">var</span> error     = <span class="synStatement">new</span> <span class="synType">Object</span>();
+        error.code    = 9;
+        error.message = <span class="synConstant">'Geolocation APIが利用できません。'</span>;
+        errorCallback(error);
+        <span class="synStatement">return</span>;
+    <span class="synIdentifier">}</span>
+
+    <span class="synComment">// 変数の初期化</span>
+    <span class="synIdentifier">var</span> watch_id = <span class="synStatement">undefined</span>;
+    <span class="synIdentifier">var</span> timer_id = <span class="synStatement">undefined</span>;
+    <span class="synIdentifier">var</span> position = <span class="synStatement">undefined</span>;
+    <span class="synIdentifier">var</span> limit    = option &amp;amp;&amp;amp; option.limit   ? option.limit   : 100;
+    <span class="synIdentifier">var</span> timeout  = option &amp;amp;&amp;amp; option.timeout ? option.timeout : 0;
+
+    <span class="synComment">// タイムアウトをセット</span>
+    <span class="synStatement">if</span>(timeout &amp;gt; 0)<span class="synIdentifier">{</span>
+        timer_id = setTimeout(
+            <span class="synIdentifier">function</span>()<span class="synIdentifier">{</span>
+                <span class="synComment">// 位置情報の取得を中止する</span>
+                <span class="synStatement">if</span>(watch_id)<span class="synIdentifier">{</span>
+                    navigator.geolocation.clearWatch(watch_id);
+                    watch_id = <span class="synStatement">undefined</span>;
+                <span class="synIdentifier">}</span>
+
+                <span class="synComment">// 位置情報が取得できていればsuccessCallbackに送る</span>
+                <span class="synStatement">if</span>(position)<span class="synIdentifier">{</span>
+                    successCallback(position);
+                <span class="synIdentifier">}</span>
+                <span class="synStatement">else</span><span class="synIdentifier">{</span>
+                    <span class="synIdentifier">var</span> error     = <span class="synStatement">new</span> <span class="synType">Object</span>();
+                    error.code    = 9;
+                    error.message = <span class="synConstant">'位置情報の取得でタイムアウトしました。'</span>;
+                    errorCallback(error);
+                    <span class="synStatement">return</span>;
+                <span class="synIdentifier">}</span>
+            <span class="synIdentifier">}</span>, 
+            timeout
+        );
+    <span class="synIdentifier">}</span>
+
+    <span class="synComment">// 取得を実行</span>
+    watch_id = navigator.geolocation.watchPosition(
+        <span class="synIdentifier">function</span>(p)<span class="synIdentifier">{</span>
+            <span class="synComment">// 取得のたびに更新する</span>
+            position = p;
+
+            <span class="synComment">// 求める精度に達すればsuccessCallbackに送る</span>
+            <span class="synStatement">if</span>(position.coords.accuracy &amp;lt; limit)<span class="synIdentifier">{</span>
+                <span class="synComment">// タイムアウト監視を止める</span>
+                <span class="synStatement">if</span>(timer_id)<span class="synIdentifier">{</span>
+                    clearTimeout(timer_id);
+                    timer_id = <span class="synStatement">undefined</span>;
+                <span class="synIdentifier">}</span>
+                navigator.geolocation.clearWatch(watch_id);
+                successCallback(position);
+            <span class="synIdentifier">}</span>
+        <span class="synIdentifier">}</span>, 
+        <span class="synIdentifier">function</span>(e)<span class="synIdentifier">{</span>
+            errorCallback(e);
+        <span class="synIdentifier">}</span>, 
+        <span class="synIdentifier">{</span>enableHighAccuracy:<span class="synConstant">true</span>, maximumAge:0<span class="synIdentifier">}</span>
+    );
+<span class="synIdentifier">}</span>
+</pre>
+
+
+<p>使えるオプションは、</p>
+
+<ul>
+    <li>limit: 許される誤差（m）。省略時は100。</li>
+    <li>timeout: 待てる時間（ms）。省略時は無限。</li>
+</ul>
+
+
+<p>に限ります。動作としては「精度がlimitより良くなるまで取得し続けるけれど、timeout以上かかるようならやめてそれなりの精度の位置情報を取得する」です。 navigator.geolocation.getCurrentPosition とやってるところを getAccuratePosition に変えるだけで大丈夫そうです。たとえば、</p>
+
+<pre class="code lang-javascript" data-lang="javascript" data-unlink>getAccuratePosition(
+    <span class="synIdentifier">function</span>(position)<span class="synIdentifier">{</span>
+        <span class="synStatement">alert</span>(<span class="synConstant">'成功'</span>);
+    <span class="synIdentifier">}</span>,
+    <span class="synIdentifier">function</span>(error)<span class="synIdentifier">{</span>
+        <span class="synStatement">alert</span>(<span class="synConstant">'失敗：'</span> + error.message + <span class="synConstant">'('</span> + error.code + <span class="synConstant">')'</span>);
+    <span class="synIdentifier">}</span>,
+    <span class="synIdentifier">{</span>limit:200, timeout:4000<span class="synIdentifier">}</span>
+);
+</pre>
+
+
+<p>のように呼ぶイメージでしょうか。このスクリプトの長所は、</p>
+
+<ul>
+    <li>navigator.geolocation.getCurrentPosition と同じノリで使える</li>
+    <li>navigator.geolocation があるかどうかまで内部でチェックする</li>
+    <li>すべてローカル変数なので他のスクリプトと衝突しにくい</li>
+</ul>
+
+
+<p>とかでしょうか。ぼくも初心者なのでツッコミ歓迎です。</p>
+
+<h3>参考文献</h3>
+
+
+<ul>
+    <li><a href="http://gihyo.jp/dev/feature/01/location-based-services/0003">位置情報サービスのはじめ方：第3回　位置情報を取得してみよう（後編）｜gihyo.jp … 技術評論社</a></li>
+    <li><a href="http://d.hatena.ne.jp/toshifumi_tegu/20100322/1269257133">geolocationでの位置情報取得 - teguのTech Blog</a></li>
+</ul>
+

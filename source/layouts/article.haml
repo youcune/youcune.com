@@ -1,0 +1,17 @@
+= wrap_layout :layout do
+  %article
+    %header
+      %h1= current_page.title
+      %ul.meta
+        %li
+          %time= icon('clock', current_page.date.strftime('%Y/%m/%d'))
+        - if current_page.tags.any?
+          - current_page.tags.each do |tag|
+            %li= link_to(icon('tag', tag), tag_path(tag), class: 'btn btn-outline btn-sm')
+      - if current_page.data.affiliate
+        .callout この記事にはアフィリエイトリンクや紹介リンクが含まれ、購入や申し込みにより筆者が報酬や特典を受ける場合があります
+      - if current_page.data.image.present?
+        = image_tag_with_size(current_page.data.image, alt: '', fetchpriority: 'high')
+    = yield
+  %aside
+    = partial 'layouts/articles-cards', locals: { articles: blog.articles[0...5] }

@@ -1,0 +1,102 @@
+---
+title: 結合されたセルの一部を変更するマクロ
+tags: Excel
+---
+<p>我々SIerはMicrosoft Excelに触れる機会が多いと思います。SIerはドヤ顔ですぐExcelを方眼紙にするので頭おかしいと思っている私ですが、Excelをさわっていると、週に一度は、</p>
+
+
+
+
+<p><span itemscope itemtype="http://schema.org/Photograph"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/youcune/20160831/20160831120126.png" alt="f:id:youcune:20160831120126p:plain" title="f:id:youcune:20160831120126p:plain" class="hatena-fotolife" itemprop="image"></span></p>
+
+
+
+
+<p><span itemscope itemtype="http://schema.org/Photograph"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/youcune/20160831/20160831120207.png" alt="f:id:youcune:20160831120207p:plain" title="f:id:youcune:20160831120207p:plain" class="hatena-fotolife" itemprop="image"></span></p>
+
+
+
+
+<p>のコンボをくらうことでしょう。なぜか、結合されたセルに文字列の貼り付けができないのです（編集モードに入ればできるけど、そうすると今度は複数セルにまたがって貼り付けられない）。と、いうことで対策マクロを作りました。もちろんタブ区切りで列、改行区切りで行に貼り付けられます。具体的にはこう。</p>
+
+
+
+
+<p><span itemscope itemtype="http://schema.org/Photograph"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/youcune/20160831/20160831120220.png" alt="f:id:youcune:20160831120220p:plain" title="f:id:youcune:20160831120220p:plain" class="hatena-fotolife" itemprop="image"></span></p>
+
+
+
+
+<p>ここに貼り付けたいとすると、</p>
+
+
+
+
+<p><span itemscope itemtype="http://schema.org/Photograph"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/youcune/20160831/20160831120235.png" alt="f:id:youcune:20160831120235p:plain" title="f:id:youcune:20160831120235p:plain" class="hatena-fotolife" itemprop="image"></span></p>
+
+
+
+
+<p>元になるTSVをコピーして、この例の場合はB3の上でマクロ実行！</p>
+
+
+
+
+<p><span itemscope itemtype="http://schema.org/Photograph"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/y/youcune/20160831/20160831120242.png" alt="f:id:youcune:20160831120242p:plain" title="f:id:youcune:20160831120242p:plain" class="hatena-fotolife" itemprop="image"></span></p>
+
+
+
+
+<p>以下ソースコード。Ctrl+Shift+Vとかにショートカットキーを割り当てておくと便利です。</p>
+
+
+
+
+<pre class="code" data-lang="" data-unlink>Sub paste_value()
+    Dim cb As New DataObject
+    Dim sel As Range
+    Set sel = Selection
+    
+    If Application.CutCopyMode Then
+        sel.PasteSpecial Paste:=xlPasteFormulasAndNumberFormats
+    Else
+        &#39; ペーストの起点を決定
+        Dim st As Range         &#39; ペースト起点
+        Set st = sel.Range(&amp;quot;A1&amp;quot;)
+        
+        &#39; クリップボードからデータ取得
+        Dim c_rows As Variant
+        cb.GetFromClipboard
+        c_rows = Split(cb.GetText, vbCrLf)
+        
+        &#39; 処理中の行/列番号
+        Dim i_row As Integer
+        i_row = st.Row
+        Dim i_col As Integer
+        i_col = st.Column
+        
+        &#39; ペースト処理
+        For i = LBound(c_rows) To UBound(c_rows)
+            Dim c_cols As Variant
+            c_cols = Split(c_rows(i), vbTab)
+            For j = LBound(c_cols) To UBound(c_cols)
+                Dim cell As Range
+                Set cell = Cells(i_row, i_col)
+                With cell
+                    .Value = c_cols(j)
+                    i_col = i_col + .MergeArea.Columns.Count
+                End With
+            Next j
+            
+            &#39; 改行
+            i_col = st.Column
+            i_row = i_row + Cells(i_row, i_col).MergeArea.Rows.Count
+        Next i
+    End If
+End Sub</pre>
+
+
+
+
+<p>セルをコピーしているときは、値の貼り付け、文字列をコピーしているときは、結合されたセルの一部を変更貼り付けモードになります。これはきっと多くの場合、期待した動作になることでしょう。</p>
+

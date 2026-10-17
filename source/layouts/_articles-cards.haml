@@ -1,0 +1,35 @@
+.columns
+  .card
+    = image_tag_with_size 'youcune.jpg', alt: 'なかにしゆう', class: 'card-img-top'
+    .card-body
+      %h2.card-title なかにしゆう
+      %p.card-text <a href="https://youcube.jp/">合同会社ユーキューブ</a>代表。ベンガル🐈とアメショ🐈‍⬛を飼っている神戸のソフトウェアエンジニア。好きな言語は関西弁で好きなRubyのメソッドは <code>Object#tap</code> で好きなポケモンはヒバニーとマリルリで趣味はキャッシュレスと充電です。2024年JGC修行を始めました。Feel free to talk to me in English!
+      %p.card-text
+        = link_to(icon('bluesky', '@youcune.com'), 'https://bsky.app/profile/youcune.com', class: 'btn btn-bluesky btn-sm')
+        = link_to(icon('x-twitter', '@youcune'), 'https://twitter.com/youcune', class: 'btn btn-x btn-sm')
+      %p.card-text
+        = link_to(icon('wikipedia-w', '詳しいプロフィール'), '/youpedia.html', class: 'btn')
+  - articles.each_with_index do |article, i|
+    = link_to article do
+      .card
+        - if article.data.image.present?
+          = image_tag_with_size article.data.image, alt: '', class: 'card-img-top'
+        .card-body
+          %h2.card-title= article.title
+          %p.card-text= article.summary(50)
+          %p.meta.card-text
+            %time= icon('clock', article.date.strftime('%Y/%m/%d'))
+            - if article.tags.any?
+              = icon('tag', article.tags.join(', '))
+  .card
+    .card-body
+      %h2.card-title= icon('tags', 'Tags')
+      %ul.list-inline.card-text
+        - blog.tags.each do |tag, articles|
+          %li= link_to(icon('tag', "#{tag} (#{articles.size})"), tag_path(tag), class: 'btn btn-outline btn-sm')
+  .card
+    .card-body
+      %h2.card-title= icon('calendar-alt', 'Archives')
+      %ul.list-inline.card-text
+        - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+          %li= link_to(icon('calendar-day', "#{year} (#{articles.size})"), blog_year_path(year), class: 'btn btn-outline btn-sm')
