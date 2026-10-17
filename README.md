@@ -8,7 +8,7 @@ MiddleMan プロジェクトです。 `build` 時に WebP 画像を自動生成�
 
 - 設定は `wrangler.jsonc` にあります。
 - 旧 URL のリダイレクトはリポジトリ直下の `_redirects` に書きます（ビルド時に `build/` へコピーされます）。
-- `/images/*` だけ `worker/index.js` を通り、ブラウザの `<img>` 読み込みで WebP に対応していれば `*.jpg.webp` / `*.png.webp` を返します。OGP のクローラーには元の JPG/PNG を返します。
+- `/images/*` だけ `worker/index.js` を通り、`Accept` に `image/webp` があれば `*.jpg.webp` / `*.png.webp` を返します。OGP のクローラー（通常 `Accept: */*`）には元の JPG/PNG を返します。
 - GitHub の Secrets に `CLOUDFLARE_API_TOKEN` と `CLOUDFLARE_ACCOUNT_ID` が必要です。
 
 ローカルで確認する場合:

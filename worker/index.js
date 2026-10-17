@@ -18,13 +18,13 @@ export default {
       return withLongCache(await env.ASSETS.fetch(request));
     }
 
-    // <img> での読み込みに限って WebP を返す
-    // OGP のクローラーは Sec-Fetch-Dest を送らないので、常に元の JPG/PNG になる
+    // Accept に image/webp を明示したクライアントにだけ WebP を返す
+    // OGP のクローラーは通常 Accept: */* なので元の JPG/PNG になる
+    // （Lighthouse は Sec-Fetch-Dest を送らないので、それを条件にしてはいけない）
     const acceptsWebp = (request.headers.get('Accept') || '').includes('image/webp');
-    const isImageLoad = request.headers.get('Sec-Fetch-Dest') === 'image';
 
     let response;
-    if (acceptsWebp && isImageLoad) {
+    if (acceptsWebp) {
       const webp = await env.ASSETS.fetch(new Request(new URL(`${url.pathname}.webp`, url), request));
       if (webp.ok || webp.status === 304) response = webp;
     }
