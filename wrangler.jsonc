@@ -2,6 +2,9 @@
   "name": "youcune-com",
   "main": "worker/index.js",
   "compatibility_date": "2026-10-01",
+  // youcune.com 以外（*.workers.dev やバージョンごとのプレビュー URL）では公開しない
+  "workers_dev": false,
+  "preview_urls": false,
   "assets": {
     "directory": "./build",
     "binding": "ASSETS",
