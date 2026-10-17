@@ -11,10 +11,12 @@ require 'base64'
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
-page '/.htaccess', layout: false
 
 # With alternative layout
 page 'articles/20*', layout: :article
+
+# Cloudflare の not_found_handling: 404-page が /404.html を返す
+page '/404.html', directory_index: false
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
@@ -110,6 +112,8 @@ configure :build do
 end
 
 after_build do
+  FileUtils.cp('_redirects', 'build/_redirects')
+
   Dir.glob('build/images/**/*.{jpg,png}').each do |file|
     system("echo '#{file}: '; cwebp -short #{file} -o #{file}.webp")
   end

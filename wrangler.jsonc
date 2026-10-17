@@ -10,6 +10,8 @@
     "binding": "ASSETS",
     // directory_indexes で生成される /foo/ → foo/index.html
     "html_handling": "auto-trailing-slash",
+    // 存在しない URL には build/404.html を 404 で返す
+    "not_found_handling": "404-page",
     // 画像のときだけ Worker を通して WebP を出し分ける（それ以外は静的配信で無料枠を消費しない）
     "run_worker_first": ["/images/*"]
   },
